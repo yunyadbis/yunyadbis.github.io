@@ -79,17 +79,19 @@
 
 
 
-<meta name="description" content="最近大家都在看世界杯，这场四年一次的盛会让全世界的球迷都为之疯狂。">
+<meta name="description" content="很多系统处理忘记密码问题时会采用发送邮件的方式，这篇文章是我在开发过程中总结的方法，还碰到了让人哭笑不得的错误，当时也是花了好久时间才调试好，分享给大家。我开发用的是Yii2.0的高级模板。 一、配置文件 common/config/main-local.php&amp;apos;mailer&amp;apos; =&amp;gt; [         &amp;apos;class&amp;apos; =&amp;gt; &amp;apos;yii\">
 <meta property="og:type" content="article">
-<meta property="og:title" content="让我们一起看世界杯吧">
-<meta property="og:url" content="http://yoursite.com/2018/07/04/let-us-watch-the-World-Cup/index.html">
+<meta property="og:title" content="Yii2.0 发送邮件">
+<meta property="og:url" content="http://yoursite.com/2018/07/05/yii2-email/index.html">
 <meta property="og:site_name" content="云过飘雨">
-<meta property="og:description" content="最近大家都在看世界杯，这场四年一次的盛会让全世界的球迷都为之疯狂。">
+<meta property="og:description" content="很多系统处理忘记密码问题时会采用发送邮件的方式，这篇文章是我在开发过程中总结的方法，还碰到了让人哭笑不得的错误，当时也是花了好久时间才调试好，分享给大家。我开发用的是Yii2.0的高级模板。 一、配置文件 common/config/main-local.php&amp;apos;mailer&amp;apos; =&amp;gt; [         &amp;apos;class&amp;apos; =&amp;gt; &amp;apos;yii\">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-07-04T12:50:57.495Z">
+<meta property="og:image" content="http://img.blog.csdn.net/20170924213642674?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvaGFueXVucGlhb3l1/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
+<meta property="og:updated_time" content="2018-07-05T01:55:46.672Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="让我们一起看世界杯吧">
-<meta name="twitter:description" content="最近大家都在看世界杯，这场四年一次的盛会让全世界的球迷都为之疯狂。">
+<meta name="twitter:title" content="Yii2.0 发送邮件">
+<meta name="twitter:description" content="很多系统处理忘记密码问题时会采用发送邮件的方式，这篇文章是我在开发过程中总结的方法，还碰到了让人哭笑不得的错误，当时也是花了好久时间才调试好，分享给大家。我开发用的是Yii2.0的高级模板。 一、配置文件 common/config/main-local.php&amp;apos;mailer&amp;apos; =&amp;gt; [         &amp;apos;class&amp;apos; =&amp;gt; &amp;apos;yii\">
+<meta name="twitter:image" content="http://img.blog.csdn.net/20170924213642674?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvaGFueXVucGlhb3l1/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
 
 
 
@@ -119,13 +121,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/07/04/let-us-watch-the-World-Cup/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/07/05/yii2-email/"/>
 
 
 
 
 
-  <title>让我们一起看世界杯吧 | 云过飘雨</title>
+  <title>Yii2.0 发送邮件 | 云过飘雨</title>
   
 
 
@@ -232,7 +234,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/04/let-us-watch-the-World-Cup/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/05/yii2-email/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="云丫">
@@ -249,7 +251,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">让我们一起看世界杯吧</h1>
+          <h1 class="post-title" itemprop="name headline">Yii2.0 发送邮件</h1>
         
 
         <div class="post-meta">
@@ -261,8 +263,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-07-04T16:56:30+08:00">
-                2018-07-04
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-07-05T09:55:27+08:00">
+                2018-07-05
               </time>
             
 
@@ -299,7 +301,33 @@
       
 
       
-        <p>最近大家都在看世界杯，这场四年一次的盛会让全世界的球迷都为之疯狂。</p>
+        <p>很多系统处理忘记密码问题时会采用发送邮件的方式，这篇文章是我在开发过程中总结的方法，还碰到了让人哭笑不得的错误，当时也是花了好久时间才调试好，分享给大家。<br>我开发用的是Yii2.0的高级模板。</p>
+<h4 id="一、配置文件-common-config-main-local-php"><a href="#一、配置文件-common-config-main-local-php" class="headerlink" title="一、配置文件 common/config/main-local.php"></a>一、配置文件 common/config/main-local.php</h4><pre><code>&apos;mailer&apos; =&gt; [
+        &apos;class&apos; =&gt; &apos;yii\swiftmailer\Mailer&apos;,
+        &apos;viewPath&apos; =&gt; &apos;@common/mail&apos;,
+        // send all mails to a file by default. You have to set
+        // &apos;useFileTransport&apos; to false and configure a transport
+        // for the mailer to send real emails.
+        &apos;useFileTransport&apos; =&gt; false,// false发送到真实的邮箱之中，true会将邮件缓存到文件中
+        &apos;transport&apos; =&gt; [
+           &apos;class&apos; =&gt; &apos;Swift_SmtpTransport&apos;,
+           &apos;host&apos; =&gt; &apos;smtp.163.com&apos;,  //每种邮箱的host配置不一样
+           &apos;username&apos; =&gt; &apos;youremail@163.com&apos;,
+           &apos;password&apos; =&gt; &apos;yourAuthenticationCode&apos;,//此处非邮箱密码，而是开启smtp服务之后的授权码
+           &apos;port&apos; =&gt; &apos;25&apos;,
+           &apos;encryption&apos; =&gt; &apos;tls&apos;,
+                       ],
+       &apos;messageConfig&apos;=&gt;[
+           &apos;charset&apos;=&gt;&apos;UTF-8&apos;,
+           &apos;from&apos;=&gt;[&apos;youremaill@163.com&apos;=&gt;&apos;admin&apos;]
+           ],
+            ],
+</code></pre><h4 id="二、使用方法"><a href="#二、使用方法" class="headerlink" title="二、使用方法"></a>二、使用方法</h4><pre><code>$mail = Yii::$app-&gt;mailer-&gt;compose();
+       $mail-&gt;setTo(&apos;***email***@163.com&apos;);
+       $mail-&gt;setSubject(&apos;Your subject&apos;);//主题中不要写test
+       $mail-&gt;setHtmlBody(&apos;Hello , Welcome !&apos;);
+</code></pre><h4 id="三、开启邮箱的SMTP服务"><a href="#三、开启邮箱的SMTP服务" class="headerlink" title="三、开启邮箱的SMTP服务"></a>三、开启邮箱的SMTP服务</h4><p>确保你用于发送邮件的邮箱开启了SMTP服务，我使用163邮箱，在设置-&gt;POP3/SMTP/IMAP可以开启SMTP服务。<br><img src="http://img.blog.csdn.net/20170924213642674?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvaGFueXVucGlhb3l1/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
+<h4 id="四、注意发送邮件的主题不能为test，否则发送不出去"><a href="#四、注意发送邮件的主题不能为test，否则发送不出去" class="headerlink" title="四、注意发送邮件的主题不能为test，否则发送不出去"></a>四、注意发送邮件的主题不能为test，否则发送不出去</h4><p>当你做好前三步之后，你还是不能成功发送邮件的话，看一下你在发送邮件时是否将主题设置成了test，没错！这样会发不出去的(′⌒`) 我在测试的时候一直用test做主题，一下午都没成功，摔桌！  改成别的主题一下子就成功了。<br>谢谢你长的这么好看，还这么有耐心的看完了(<em> ￣3)(ε￣ </em>)</p>
 
       
     </div>
@@ -324,8 +352,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/07/04/hello-world/" rel="next" title="Hello World">
-                <i class="fa fa-chevron-left"></i> Hello World
+              <a href="/2018/07/05/yii2-js-function-undefined/" rel="next" title="Yii2.0 js函数未定义">
+                <i class="fa fa-chevron-left"></i> Yii2.0 js函数未定义
               </a>
             
           </div>
@@ -333,10 +361,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/07/04/jdk1-8to1-7/" rel="prev" title="Java JDK 1.8下降至1.7">
-                Java JDK 1.8下降至1.7 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -388,8 +412,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -431,6 +464,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#一、配置文件-common-config-main-local-php"><span class="nav-number">1.</span> <span class="nav-text">一、配置文件 common/config/main-local.php</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#二、使用方法"><span class="nav-number">2.</span> <span class="nav-text">二、使用方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#三、开启邮箱的SMTP服务"><span class="nav-number">3.</span> <span class="nav-text">三、开启邮箱的SMTP服务</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#四、注意发送邮件的主题不能为test，否则发送不出去"><span class="nav-number">4.</span> <span class="nav-text">四、注意发送邮件的主题不能为test，否则发送不出去</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       

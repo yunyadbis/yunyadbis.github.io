@@ -229,6 +229,398 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/05/yii2-email/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="云丫">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="云过飘雨">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/07/05/yii2-email/" itemprop="url">Yii2.0 发送邮件</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-07-05T09:55:27+08:00">
+                2018-07-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>很多系统处理忘记密码问题时会采用发送邮件的方式，这篇文章是我在开发过程中总结的方法，还碰到了让人哭笑不得的错误，当时也是花了好久时间才调试好，分享给大家。<br>我开发用的是Yii2.0的高级模板。</p>
+<h4 id="一、配置文件-common-config-main-local-php"><a href="#一、配置文件-common-config-main-local-php" class="headerlink" title="一、配置文件 common/config/main-local.php"></a>一、配置文件 common/config/main-local.php</h4><pre><code>&apos;mailer&apos; =&gt; [
+        &apos;class&apos; =&gt; &apos;yii\swiftmailer\Mailer&apos;,
+        &apos;viewPath&apos; =&gt; &apos;@common/mail&apos;,
+        // send all mails to a file by default. You have to set
+        // &apos;useFileTransport&apos; to false and configure a transport
+        // for the mailer to send real emails.
+        &apos;useFileTransport&apos; =&gt; false,// false发送到真实的邮箱之中，true会将邮件缓存到文件中
+        &apos;transport&apos; =&gt; [
+           &apos;class&apos; =&gt; &apos;Swift_SmtpTransport&apos;,
+           &apos;host&apos; =&gt; &apos;smtp.163.com&apos;,  //每种邮箱的host配置不一样
+           &apos;username&apos; =&gt; &apos;youremail@163.com&apos;,
+           &apos;password&apos; =&gt; &apos;yourAuthenticationCode&apos;,//此处非邮箱密码，而是开启smtp服务之后的授权码
+           &apos;port&apos; =&gt; &apos;25&apos;,
+           &apos;encryption&apos; =&gt; &apos;tls&apos;,
+                       ],
+       &apos;messageConfig&apos;=&gt;[
+           &apos;charset&apos;=&gt;&apos;UTF-8&apos;,
+           &apos;from&apos;=&gt;[&apos;youremaill@163.com&apos;=&gt;&apos;admin&apos;]
+           ],
+            ],
+</code></pre><h4 id="二、使用方法"><a href="#二、使用方法" class="headerlink" title="二、使用方法"></a>二、使用方法</h4><pre><code>$mail = Yii::$app-&gt;mailer-&gt;compose();
+       $mail-&gt;setTo(&apos;***email***@163.com&apos;);
+       $mail-&gt;setSubject(&apos;Your subject&apos;);//主题中不要写test
+       $mail-&gt;setHtmlBody(&apos;Hello , Welcome !&apos;);
+</code></pre><h4 id="三、开启邮箱的SMTP服务"><a href="#三、开启邮箱的SMTP服务" class="headerlink" title="三、开启邮箱的SMTP服务"></a>三、开启邮箱的SMTP服务</h4><p>确保你用于发送邮件的邮箱开启了SMTP服务，我使用163邮箱，在设置-&gt;POP3/SMTP/IMAP可以开启SMTP服务。<br><img src="http://img.blog.csdn.net/20170924213642674?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvaGFueXVucGlhb3l1/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
+<h4 id="四、注意发送邮件的主题不能为test，否则发送不出去"><a href="#四、注意发送邮件的主题不能为test，否则发送不出去" class="headerlink" title="四、注意发送邮件的主题不能为test，否则发送不出去"></a>四、注意发送邮件的主题不能为test，否则发送不出去</h4><p>当你做好前三步之后，你还是不能成功发送邮件的话，看一下你在发送邮件时是否将主题设置成了test，没错！这样会发不出去的(′⌒`) 我在测试的时候一直用test做主题，一下午都没成功，摔桌！  改成别的主题一下子就成功了。<br>谢谢你长的这么好看，还这么有耐心的看完了(<em> ￣3)(ε￣ </em>)</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/05/yii2-js-function-undefined/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="云丫">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="云过飘雨">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/07/05/yii2-js-function-undefined/" itemprop="url">Yii2.0 js函数未定义</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-07-05T09:54:18+08:00">
+                2018-07-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>最近在使用Yii2.0框架开发，为了提高开发效率直接使用了一套Yii2.0的后台模板。调试js时，发现js里写的函数都找不到，仔细排查之后发现了问题在于Yii2框架代码块的问题。<br>Yii2的代码里js被包在一个Block里，如下所示：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">&lt;?php $this-&gt;beginBlock(&apos;js_end&apos;) ?&gt;</span><br><span class="line">//js代码</span><br><span class="line">&lt;?php $this-&gt;endBlock() ?&gt;</span><br><span class="line">&lt;/script&gt;</span><br><span class="line">&lt;?php $this-&gt;registerJs($this-&gt;blocks[&apos;js_end&apos;], yii\web\View::POS_LOAD) ?&gt;</span><br></pre></td></tr></table></figure>
+<p>这段代码的意思是把script标签中的js代码看成是一个以js_end为名的js文件，在页面中加载进来。那么为什么会报错js未定义呢？是registerJs函数的第二个参数起了作用，它决定了这段js代码的加载顺序。<br>registerJs的第二个参数可以是以下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">POS_HEAD：head结束标签之前</span><br><span class="line"></span><br><span class="line">POS_BEGIN：body开始标签之后</span><br><span class="line"></span><br><span class="line">POS_END：body结束标签之前</span><br><span class="line"></span><br><span class="line">POS_READY：页面加载完成之后</span><br></pre></td></tr></table></figure>
+<p>原来是我们在页面加载完成之后才加载js，Block内的函数就成了window.onload里的函数，作用域在此局部，外部无法获取。因此我们需要将其放到全局作用域中。<br>我使用了比较简单粗暴的方法，直接将定义Block及注册js的语句删掉即可。<br>谢谢你长得这么好看，还这么耐心地看到这。</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/05/python-write-in-csv-file-unidentifiable-chinese-code/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="云丫">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="云过飘雨">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/07/05/python-write-in-csv-file-unidentifiable-chinese-code/" itemprop="url">python写入csv文件中文乱码解决方案</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-07-05T09:52:57+08:00">
+                2018-07-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h1><p>最近处理数据时需要将txt文件转化成csv格式，txt中正常存储显示的中文在写入到csv文件时变成了乱码，文件的编码未能正确处理中文，需要在写入csv文件时指定编码。</p>
+<h1 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">csvfile = file(&apos;data.csv&apos;, &apos;wb&apos;)</span><br><span class="line"># Display chinese correctly</span><br><span class="line">csvfile.write(codecs.BOM_UTF8)</span><br><span class="line">spamwriter = csv.writer(csvfile)</span><br></pre></td></tr></table></figure>
+<p>关键的一句话就是<strong><em>csvfile.write(codecs.BOM_UTF8)</em></strong>，能够正常显示中文。</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/04/tpc-h-generage-dataset/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -778,7 +1170,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">7</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>

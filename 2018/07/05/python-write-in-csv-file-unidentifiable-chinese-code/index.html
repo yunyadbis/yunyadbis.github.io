@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="最近大家都在看世界杯，这场四年一次的盛会让全世界的球迷都为之疯狂。">
+<meta name="description" content="问题最近处理数据时需要将txt文件转化成csv格式，txt中正常存储显示的中文在写入到csv文件时变成了乱码，文件的编码未能正确处理中文，需要在写入csv文件时指定编码。 解决方法1234csvfile = file(&amp;apos;data.csv&amp;apos;, &amp;apos;wb&amp;apos;)# Display chinese correctlycsvfile.write(codecs.BOM_UT">
 <meta property="og:type" content="article">
-<meta property="og:title" content="让我们一起看世界杯吧">
-<meta property="og:url" content="http://yoursite.com/2018/07/04/let-us-watch-the-World-Cup/index.html">
+<meta property="og:title" content="python写入csv文件中文乱码解决方案">
+<meta property="og:url" content="http://yoursite.com/2018/07/05/python-write-in-csv-file-unidentifiable-chinese-code/index.html">
 <meta property="og:site_name" content="云过飘雨">
-<meta property="og:description" content="最近大家都在看世界杯，这场四年一次的盛会让全世界的球迷都为之疯狂。">
+<meta property="og:description" content="问题最近处理数据时需要将txt文件转化成csv格式，txt中正常存储显示的中文在写入到csv文件时变成了乱码，文件的编码未能正确处理中文，需要在写入csv文件时指定编码。 解决方法1234csvfile = file(&amp;apos;data.csv&amp;apos;, &amp;apos;wb&amp;apos;)# Display chinese correctlycsvfile.write(codecs.BOM_UT">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-07-04T12:50:57.495Z">
+<meta property="og:updated_time" content="2018-07-05T01:53:39.922Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="让我们一起看世界杯吧">
-<meta name="twitter:description" content="最近大家都在看世界杯，这场四年一次的盛会让全世界的球迷都为之疯狂。">
+<meta name="twitter:title" content="python写入csv文件中文乱码解决方案">
+<meta name="twitter:description" content="问题最近处理数据时需要将txt文件转化成csv格式，txt中正常存储显示的中文在写入到csv文件时变成了乱码，文件的编码未能正确处理中文，需要在写入csv文件时指定编码。 解决方法1234csvfile = file(&amp;apos;data.csv&amp;apos;, &amp;apos;wb&amp;apos;)# Display chinese correctlycsvfile.write(codecs.BOM_UT">
 
 
 
@@ -119,13 +119,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/07/04/let-us-watch-the-World-Cup/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/07/05/python-write-in-csv-file-unidentifiable-chinese-code/"/>
 
 
 
 
 
-  <title>让我们一起看世界杯吧 | 云过飘雨</title>
+  <title>python写入csv文件中文乱码解决方案 | 云过飘雨</title>
   
 
 
@@ -232,7 +232,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/04/let-us-watch-the-World-Cup/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/05/python-write-in-csv-file-unidentifiable-chinese-code/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="云丫">
@@ -249,7 +249,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">让我们一起看世界杯吧</h1>
+          <h1 class="post-title" itemprop="name headline">python写入csv文件中文乱码解决方案</h1>
         
 
         <div class="post-meta">
@@ -261,8 +261,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-07-04T16:56:30+08:00">
-                2018-07-04
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-07-05T09:52:57+08:00">
+                2018-07-05
               </time>
             
 
@@ -299,7 +299,9 @@
       
 
       
-        <p>最近大家都在看世界杯，这场四年一次的盛会让全世界的球迷都为之疯狂。</p>
+        <h1 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h1><p>最近处理数据时需要将txt文件转化成csv格式，txt中正常存储显示的中文在写入到csv文件时变成了乱码，文件的编码未能正确处理中文，需要在写入csv文件时指定编码。</p>
+<h1 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">csvfile = file(&apos;data.csv&apos;, &apos;wb&apos;)</span><br><span class="line"># Display chinese correctly</span><br><span class="line">csvfile.write(codecs.BOM_UTF8)</span><br><span class="line">spamwriter = csv.writer(csvfile)</span><br></pre></td></tr></table></figure>
+<p>关键的一句话就是<strong><em>csvfile.write(codecs.BOM_UTF8)</em></strong>，能够正常显示中文。</p>
 
       
     </div>
@@ -324,8 +326,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/07/04/hello-world/" rel="next" title="Hello World">
-                <i class="fa fa-chevron-left"></i> Hello World
+              <a href="/2018/07/04/tpc-h-generage-dataset/" rel="next" title="TPC-H生成数据集的方法">
+                <i class="fa fa-chevron-left"></i> TPC-H生成数据集的方法
               </a>
             
           </div>
@@ -334,8 +336,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/07/04/jdk1-8to1-7/" rel="prev" title="Java JDK 1.8下降至1.7">
-                Java JDK 1.8下降至1.7 <i class="fa fa-chevron-right"></i>
+              <a href="/2018/07/05/yii2-js-function-undefined/" rel="prev" title="Yii2.0 js函数未定义">
+                Yii2.0 js函数未定义 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -388,8 +390,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -431,6 +442,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#问题"><span class="nav-number">1.</span> <span class="nav-text">问题</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#解决方法"><span class="nav-number">2.</span> <span class="nav-text">解决方法</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       

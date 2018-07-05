@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="最近大家都在看世界杯，这场四年一次的盛会让全世界的球迷都为之疯狂。">
+<meta name="description" content="最近在使用Yii2.0框架开发，为了提高开发效率直接使用了一套Yii2.0的后台模板。调试js时，发现js里写的函数都找不到，仔细排查之后发现了问题在于Yii2框架代码块的问题。Yii2的代码里js被包在一个Block里，如下所示： 123456&amp;lt;script&amp;gt;&amp;lt;?php $this-&amp;gt;beginBlock(&amp;apos;js_end&amp;apos;) ?&amp;gt;//js代码&amp;l">
 <meta property="og:type" content="article">
-<meta property="og:title" content="让我们一起看世界杯吧">
-<meta property="og:url" content="http://yoursite.com/2018/07/04/let-us-watch-the-World-Cup/index.html">
+<meta property="og:title" content="Yii2.0 js函数未定义">
+<meta property="og:url" content="http://yoursite.com/2018/07/05/yii2-js-function-undefined/index.html">
 <meta property="og:site_name" content="云过飘雨">
-<meta property="og:description" content="最近大家都在看世界杯，这场四年一次的盛会让全世界的球迷都为之疯狂。">
+<meta property="og:description" content="最近在使用Yii2.0框架开发，为了提高开发效率直接使用了一套Yii2.0的后台模板。调试js时，发现js里写的函数都找不到，仔细排查之后发现了问题在于Yii2框架代码块的问题。Yii2的代码里js被包在一个Block里，如下所示： 123456&amp;lt;script&amp;gt;&amp;lt;?php $this-&amp;gt;beginBlock(&amp;apos;js_end&amp;apos;) ?&amp;gt;//js代码&amp;l">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-07-04T12:50:57.495Z">
+<meta property="og:updated_time" content="2018-07-05T01:54:38.466Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="让我们一起看世界杯吧">
-<meta name="twitter:description" content="最近大家都在看世界杯，这场四年一次的盛会让全世界的球迷都为之疯狂。">
+<meta name="twitter:title" content="Yii2.0 js函数未定义">
+<meta name="twitter:description" content="最近在使用Yii2.0框架开发，为了提高开发效率直接使用了一套Yii2.0的后台模板。调试js时，发现js里写的函数都找不到，仔细排查之后发现了问题在于Yii2框架代码块的问题。Yii2的代码里js被包在一个Block里，如下所示： 123456&amp;lt;script&amp;gt;&amp;lt;?php $this-&amp;gt;beginBlock(&amp;apos;js_end&amp;apos;) ?&amp;gt;//js代码&amp;l">
 
 
 
@@ -119,13 +119,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/07/04/let-us-watch-the-World-Cup/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/07/05/yii2-js-function-undefined/"/>
 
 
 
 
 
-  <title>让我们一起看世界杯吧 | 云过飘雨</title>
+  <title>Yii2.0 js函数未定义 | 云过飘雨</title>
   
 
 
@@ -232,7 +232,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/04/let-us-watch-the-World-Cup/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/05/yii2-js-function-undefined/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="云丫">
@@ -249,7 +249,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">让我们一起看世界杯吧</h1>
+          <h1 class="post-title" itemprop="name headline">Yii2.0 js函数未定义</h1>
         
 
         <div class="post-meta">
@@ -261,8 +261,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-07-04T16:56:30+08:00">
-                2018-07-04
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-07-05T09:54:18+08:00">
+                2018-07-05
               </time>
             
 
@@ -299,7 +299,11 @@
       
 
       
-        <p>最近大家都在看世界杯，这场四年一次的盛会让全世界的球迷都为之疯狂。</p>
+        <p>最近在使用Yii2.0框架开发，为了提高开发效率直接使用了一套Yii2.0的后台模板。调试js时，发现js里写的函数都找不到，仔细排查之后发现了问题在于Yii2框架代码块的问题。<br>Yii2的代码里js被包在一个Block里，如下所示：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">&lt;?php $this-&gt;beginBlock(&apos;js_end&apos;) ?&gt;</span><br><span class="line">//js代码</span><br><span class="line">&lt;?php $this-&gt;endBlock() ?&gt;</span><br><span class="line">&lt;/script&gt;</span><br><span class="line">&lt;?php $this-&gt;registerJs($this-&gt;blocks[&apos;js_end&apos;], yii\web\View::POS_LOAD) ?&gt;</span><br></pre></td></tr></table></figure>
+<p>这段代码的意思是把script标签中的js代码看成是一个以js_end为名的js文件，在页面中加载进来。那么为什么会报错js未定义呢？是registerJs函数的第二个参数起了作用，它决定了这段js代码的加载顺序。<br>registerJs的第二个参数可以是以下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">POS_HEAD：head结束标签之前</span><br><span class="line"></span><br><span class="line">POS_BEGIN：body开始标签之后</span><br><span class="line"></span><br><span class="line">POS_END：body结束标签之前</span><br><span class="line"></span><br><span class="line">POS_READY：页面加载完成之后</span><br></pre></td></tr></table></figure>
+<p>原来是我们在页面加载完成之后才加载js，Block内的函数就成了window.onload里的函数，作用域在此局部，外部无法获取。因此我们需要将其放到全局作用域中。<br>我使用了比较简单粗暴的方法，直接将定义Block及注册js的语句删掉即可。<br>谢谢你长得这么好看，还这么耐心地看到这。</p>
 
       
     </div>
@@ -324,8 +328,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/07/04/hello-world/" rel="next" title="Hello World">
-                <i class="fa fa-chevron-left"></i> Hello World
+              <a href="/2018/07/05/python-write-in-csv-file-unidentifiable-chinese-code/" rel="next" title="python写入csv文件中文乱码解决方案">
+                <i class="fa fa-chevron-left"></i> python写入csv文件中文乱码解决方案
               </a>
             
           </div>
@@ -334,8 +338,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/07/04/jdk1-8to1-7/" rel="prev" title="Java JDK 1.8下降至1.7">
-                Java JDK 1.8下降至1.7 <i class="fa fa-chevron-right"></i>
+              <a href="/2018/07/05/yii2-email/" rel="prev" title="Yii2.0 发送邮件">
+                Yii2.0 发送邮件 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
