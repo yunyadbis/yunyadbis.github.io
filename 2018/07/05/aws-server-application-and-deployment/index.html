@@ -79,17 +79,21 @@
 
 
 
-<meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta name="description" content="近期的项目开发需要部署节点在海外的服务器，AWS提供了12个月的免费套餐，对于团队初期做MVP来说是个非常好的选择 。对比很多海外的云服务器，AWS可以说是非常良心了。下面就讲一下AWS的云主机申请及部署的过程。 ###一、申请aws账号进入aws官网 （aws.amazon.com），申请海外账号。（aws中国不对个人开放）填写账户密码信息、联系人信息，绑定信用卡，这个过程步骤很多，会进行一系列">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="http://yoursite.com/2018/07/04/hello-world/index.html">
+<meta property="og:title" content="AWS服务器申请及部署（一年免费版）">
+<meta property="og:url" content="http://yoursite.com/2018/07/05/aws-server-application-and-deployment/index.html">
 <meta property="og:site_name" content="云过飘雨">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta property="og:description" content="近期的项目开发需要部署节点在海外的服务器，AWS提供了12个月的免费套餐，对于团队初期做MVP来说是个非常好的选择 。对比很多海外的云服务器，AWS可以说是非常良心了。下面就讲一下AWS的云主机申请及部署的过程。 ###一、申请aws账号进入aws官网 （aws.amazon.com），申请海外账号。（aws中国不对个人开放）填写账户密码信息、联系人信息，绑定信用卡，这个过程步骤很多，会进行一系列">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-07-04T06:21:53.605Z">
+<meta property="og:image" content="http://img.blog.csdn.net/20170923125252043?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvaGFueXVucGlhb3l1/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
+<meta property="og:image" content="http://img.blog.csdn.net/20170923125922326?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvaGFueXVucGlhb3l1/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
+<meta property="og:image" content="http://img.blog.csdn.net/20170923130011229?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvaGFueXVucGlhb3l1/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
+<meta property="og:updated_time" content="2018-07-05T12:44:37.456Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hello World">
-<meta name="twitter:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta name="twitter:title" content="AWS服务器申请及部署（一年免费版）">
+<meta name="twitter:description" content="近期的项目开发需要部署节点在海外的服务器，AWS提供了12个月的免费套餐，对于团队初期做MVP来说是个非常好的选择 。对比很多海外的云服务器，AWS可以说是非常良心了。下面就讲一下AWS的云主机申请及部署的过程。 ###一、申请aws账号进入aws官网 （aws.amazon.com），申请海外账号。（aws中国不对个人开放）填写账户密码信息、联系人信息，绑定信用卡，这个过程步骤很多，会进行一系列">
+<meta name="twitter:image" content="http://img.blog.csdn.net/20170923125252043?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvaGFueXVucGlhb3l1/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
 
 
 
@@ -119,13 +123,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/07/04/hello-world/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/07/05/aws-server-application-and-deployment/"/>
 
 
 
 
 
-  <title>Hello World | 云过飘雨</title>
+  <title>AWS服务器申请及部署（一年免费版） | 云过飘雨</title>
   
 
 
@@ -232,7 +236,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/04/hello-world/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/05/aws-server-application-and-deployment/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="云丫">
@@ -249,7 +253,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Hello World</h1>
+          <h1 class="post-title" itemprop="name headline">AWS服务器申请及部署（一年免费版）</h1>
         
 
         <div class="post-meta">
@@ -261,8 +265,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-07-04T14:21:53+08:00">
-                2018-07-04
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-07-05T20:43:15+08:00">
+                2018-07-05
               </time>
             
 
@@ -299,15 +303,22 @@
       
 
       
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+        <p>近期的项目开发需要部署节点在海外的服务器，AWS提供了12个月的免费套餐，对于团队初期做MVP来说是个非常好的选择 。对比很多海外的云服务器，AWS可以说是非常良心了。下面就讲一下AWS的云主机申请及部署的过程。</p>
+<p>###一、申请aws账号<br>进入aws官网 （aws.amazon.com），申请海外账号。（aws中国不对个人开放）<br>填写账户密码信息、联系人信息，绑定信用卡，这个过程步骤很多，会进行一系列的验证，信用卡必须是有境外支付功能的卡，如VISA。<br>这个过程我就不详细说了，按照提示一步步往下走就可以，AWS的工作人员服务很到位，期初我申请了aws中国区的账号，过程中遇到了问题，很快就有人跟我电话联系告诉我解决方法。<br>当你搞定了第一步之后，我们就可以申请云主机并部署了。</p>
+<p>###二、创建ec2实例</p>
+<p>####1.进入aws<br>参见 <a href="http://blog.csdn.net/qq_28629495/article/details/51363450" target="_blank" rel="noopener">http://blog.csdn.net/qq_28629495/article/details/51363450</a><br>秘钥文件为.pem结束的。</p>
+<p>####2. 创建实例账户<br>在控制台相关菜单中新建，流程中注意分配权限<br>这部分也是参考CSDN上小伙伴的方法~</p>
+<p>###三、安装lampp</p>
+<p>####1.下载XShell，Xftp并安装</p>
+<p>####2. 在aws主机上安装lampp<br>参考：如何在Linux上安装xampp？<br><a href="https://jingyan.baidu.com/article/afd8f4de7976b034e286e90c.html" target="_blank" rel="noopener">https://jingyan.baidu.com/article/afd8f4de7976b034e286e90c.html</a></p>
+<p>###四、将源代码传输到云主机上</p>
+<p>####1.打开Xshell，新建会话<br><img src="http://img.blog.csdn.net/20170923125252043?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvaGFueXVucGlhb3l1/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"><br>主机： ec2-<strong><strong><strong>*</strong></strong></strong>amazonaws.com（在创建的实例上公网IP）<br>用户名： ubuntu<br>文件：.pem文件<br>填写完成之后点击确定进行连接，连接成功后显示如下：<br><img src="http://img.blog.csdn.net/20170923125922326?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvaGFueXVucGlhb3l1/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
+<p>####2. 新建文件传输，将代码通过ftp传输到主机上。<br>首先添加文件夹的写权限 chmod 777 /opt/lampp/htdocs/<br>点击菜单栏上的【新建文件传输】按钮，显示如下，左侧为本地文件目录，右侧为aws主机目录，进入opt/lampp/htdocs目录下，将文件从本地拖到云主机的相应目录下，解压即可<br><img src="http://img.blog.csdn.net/20170923130011229?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvaGFueXVucGlhb3l1/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
+<p>###五、配置云主机MySQL</p>
+<p>####1.进入 opt/lampp/bin目录，输入命令 ./mysql -uroot -p<br>要求输入密码，MySQL初始密码为空，直接敲回车</p>
+<p>####2.设置MySQL的密码，输入命令<br>grant all privileges on <em>.</em> to ‘root‘@’%’ identified by ‘secret’ with grant option;<br>secret为新设置的密码</p>
+<p>####3.打开Navicat，新建连接<br>host：<strong><strong>**</strong></strong>（服务器的公网IP）<br>用户名：root<br>密码：secret</p>
+<p>####4.连接成功之后新建数据库，向数据库中插入表。</p>
 
       
     </div>
@@ -332,15 +343,15 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2018/07/05/yii2-email/" rel="next" title="Yii2.0 发送邮件">
+                <i class="fa fa-chevron-left"></i> Yii2.0 发送邮件
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/07/04/let-us-watch-the-World-Cup/" rel="prev" title="让我们一起看世界杯吧">
-                让我们一起看世界杯吧 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -392,17 +403,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            Table of Contents
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            Overview
-          </li>
-        </ul>
-      
 
-      <section class="site-overview-wrap sidebar-panel">
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -444,22 +446,6 @@
         </div>
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Quick-Start"><span class="nav-number">1.</span> <span class="nav-text">Quick Start</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Create-a-new-post"><span class="nav-number">1.1.</span> <span class="nav-text">Create a new post</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Run-server"><span class="nav-number">1.2.</span> <span class="nav-text">Run server</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Generate-static-files"><span class="nav-number">1.3.</span> <span class="nav-text">Generate static files</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Deploy-to-remote-sites"><span class="nav-number">1.4.</span> <span class="nav-text">Deploy to remote sites</span></a></li></ol></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       
