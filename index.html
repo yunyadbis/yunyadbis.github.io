@@ -310,8 +310,9 @@
       
         
           
-          下午刚刚下过雨，晚风很是清凉。晚饭吃了一碗拌面有点撑，这么好的晚风可不能辜负，当然是去遛弯啦。新校区的周围空荡荡的，基本都到哪里都可以看到远处天空好看的渐变色。虽然没有老校区那种历史的积淀，走起来也觉得青葱自然。以前在老校区的时候我特别喜欢去敬业广场，晚上那里总是很热闹。我就坐在石凳上，看着爷爷奶奶或者爸爸妈妈带着小孩在院子里逛。小孩子的那种开心是非常有感染力的，会让你不知不觉中也嘴角上扬。所以即
-          ...
+          下午刚刚下过雨，晚风很是清凉。晚饭吃了一碗拌面有点撑，这么好的晚风可不能辜负，当然是去遛弯啦。新校区的周围空荡荡的，基本都到哪里都可以看到远处天空好看的渐变色。虽然没有老校区那种历史的积淀，走起来也觉得青葱自然。以前在老校区的时候我特别喜欢去敬业广场，晚上那里总是很热闹。我就坐在石凳上，看着爷爷奶奶或者爸爸妈妈带着小孩在院子里逛。小孩子的那种开心是非常有感染力的，会让你不知不觉中也嘴角上扬。所以即使敬业广场的砖路坑坑洼洼，夏夜的蚊子把人叮得满腿大包，我还是很喜欢坐在那。来了新校区，周围比较荒凉，最大的感觉是没什么人气。可是后来我渐渐地发现，南门广场总理像前好多附近小区的人会过来玩，坐在旁边的台阶上总能让我想起在八里台敬业广场的日子。总会慢慢变好的，都是这样。今天遛弯的时候走到东门，学活后边的小广场上也有许多人在乘凉，大概是东门离得最近了。这两个地方让我眼中的新校区慢慢变得活络起来，虽然蚊子比老校区的大还多。其实说这么多废话，我就是想试试图片能不能成功插进来。耶，搞定啦。谢谢你长得这么好看，还耐心地看到这了。
+
+          
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2018/07/06/walk-on-campus/#more" rel="contents">
@@ -447,7 +448,14 @@
         
           
           近期的项目开发需要部署节点在海外的服务器，AWS提供了12个月的免费套餐，对于团队初期做MVP来说是个非常好的选择 。对比很多海外的云服务器，AWS可以说是非常良心了。下面就讲一下AWS的云主机申请及部署的过程。
-一、申请aws账号进入aws官网 （aws.amazon.com），申请海外账号。（aws中国不对个人开放）填写账户密码信息、联系人信息，绑定信用卡，这个过程步骤很多，会进行一系列的验证
+一、申请aws账号进入aws官网 （aws.amazon.com），申请海外账号。（aws中国不对个人开放）填写账户密码信息、联系人信息，绑定信用卡，这个过程步骤很多，会进行一系列的验证，信用卡必须是有境外支付功能的卡，如VISA。这个过程我就不详细说了，按照提示一步步往下走就可以，AWS的工作人员服务很到位，期初我申请了aws中国区的账号，过程中遇到了问题，很快就有人跟我电话联系告诉我解决方法。当你搞定了第一步之后，我们就可以申请云主机并部署了。
+二、创建ec2实例1.进入aws参见 http://blog.csdn.net/qq_28629495/article/details/51363450秘钥文件为.pem结束的。
+2. 创建实例账户在控制台相关菜单中新建，流程中注意分配权限这部分也是参考CSDN上小伙伴的方法~
+三、安装lampp1.下载XShell，Xftp并安装2. 在aws主机上安装lampp参考：如何在Linux上安装xampp？https://jingyan.baidu.com/article/afd8f4de7976b034e286e90c.html
+四、将源代码传输到云主机上1.打开Xshell，新建会话主机： ec2-*amazonaws.com（在创建的实例上公网IP）用户名： ubuntu文件：.pem文件填写完成之后点击确定进行连接，连接成功后显示如下：
+2. 新建文件传输，将代码通过ftp传输到主机上。首先添加文件夹的写权限 chmod 777 /opt/lampp/htdocs/点击菜单栏上的【新建文件传输】按钮，显示如下，左侧为本地文件目录，右侧为aws主机目录，进入opt/lampp/htdocs目录下，将文件从本地拖到云主机的相应目录下，解压即可
+五、配置云主机MySQL1.进入 opt/lampp/bin目录，输入命令 ./mysql -uroot -p要求输入密码，MySQL初始密码为空，直接敲回车
+2.设置MySQL的密码，输入命令grant all privileges on . to ‘root‘@’%
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -585,7 +593,19 @@
           
           很多系统处理忘记密码问题时会采用发送邮件的方式，这篇文章是我在开发过程中总结的方法，还碰到了让人哭笑不得的错误，当时也是花了好久时间才调试好，分享给大家。我开发用的是Yii2.0的高级模板。
 一、配置文件 common/config/main-local.php&apos;mailer&apos; =&gt; [
-        &apos;class&apos; =&gt; &apos;yii\
+        &apos;class&apos; =&gt; &apos;yii\swiftmailer\Mailer&apos;,
+        &apos;viewPath&apos; =&gt; &apos;@common/mail&apos;,
+        // send all mails to a file by default. You have to set
+        // &apos;useFileTransport&apos; to false and configure a transport
+        // for the mailer to send real emails.
+        &apos;useFileTransport&apos; =&gt; false,// false发送到真实的邮箱之中，true会将邮件缓存到文件中
+        &apos;transport&apos; =&gt; [
+           &apos;class&apos; =&gt; &apos;Swift_SmtpTransport&apos;,
+           &apos;host&apos; =&gt; &apos;smtp.163.com&apos;,  //每种邮箱的host配置不一样
+           &apos;username&apos; =&gt; &apos;youremail@163.com&apos;,
+           &apos;password&apos; =&gt; &apos;yourAuthenticationCode&apos;,//此处非邮箱密码，而是开启smtp服务之后的授权码
+           &apos;port&apos; =&gt; &apos;25&apos;,
+           &apos;encryption&apos; =&gt; &
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -722,8 +742,12 @@
         
           
           最近在使用Yii2.0框架开发，为了提高开发效率直接使用了一套Yii2.0的后台模板。调试js时，发现js里写的函数都找不到，仔细排查之后发现了问题在于Yii2框架代码块的问题。Yii2的代码里js被包在一个Block里，如下所示：
-123456&lt;script&gt;&lt;?php $this-&gt;beginBlock(&apos;js_end&apos;) ?&gt;//js代码&l
-          ...
+123456&lt;script&gt;&lt;?php $this-&gt;beginBlock(&apos;js_end&apos;) ?&gt;//js代码&lt;?php $this-&gt;endBlock() ?&gt;&lt;/script&gt;&lt;?php $this-&gt;registerJs($this-&gt;blocks[&apos;js_end&apos;], yii\web\View::POS_LOAD) ?&gt;
+这段代码的意思是把script标签中的js代码看成是一个以js_end为名的js文件，在页面中加载进来。那么为什么会报错js未定义呢？是registerJs函数的第二个参数起了作用，它决定了这段js代码的加载顺序。registerJs的第二个参数可以是以下：
+1234567POS_HEAD：head结束标签之前POS_BEGIN：body开始标签之后POS_END：body结束标签之前POS_READY：页面加载完成之后
+原来是我们在页面加载完成之后才加载js，Block内的函数就成了window.onload里的函数，作用域在此局部，外部无法获取。因此我们需要将其放到全局作用域中。我使用了比较简单粗暴的方法，直接将定义Block及注册js的语句删掉即可。谢谢你长得这么好看，还这么耐心地看到这。
+
+          
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2018/07/05/yii2-js-function-undefined/#more" rel="contents">
@@ -859,8 +883,10 @@
         
           
           问题最近处理数据时需要将txt文件转化成csv格式，txt中正常存储显示的中文在写入到csv文件时变成了乱码，文件的编码未能正确处理中文，需要在写入csv文件时指定编码。
-解决方法1234csvfile = file(&apos;data.csv&apos;, &apos;wb&apos;)# Display chinese correctlycsvfile.write(codecs.BOM_UT
-          ...
+解决方法1234csvfile = file(&apos;data.csv&apos;, &apos;wb&apos;)# Display chinese correctlycsvfile.write(codecs.BOM_UTF8)spamwriter = csv.writer(csvfile)
+关键的一句话就是csvfile.write(codecs.BOM_UTF8)，能够正常显示中文。
+
+          
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2018/07/05/python-write-in-csv-file-unidentifiable-chinese-code/#more" rel="contents">
@@ -999,7 +1025,16 @@
 1.下载TPC-H的生成工具http://www.tpc.org/tpch/ 奉上链接
 网盘链接：https://pan.baidu.com/s/1u3_bwZbyWKrFGqdVzV2_7g 密码：sgnw
 2.解压原文件3.修改makefile文件进入dbgen目录1cd dbgen
-复制makefile.suite到ma
+复制makefile.suite到makefile
+1cp makefile.suite makefile
+修改makefile文件
+1vim makefile
+修改为如下内容（gcc要是小写的，因为这个问题百度了一小时左右-_-||）
+4.执行make，dbgen命令生成表结构和数据如果你之前生成过数据表，可以执行make clean先清除一下再执行以下命令。1make
+执行dbgen，生成数据表，大小为2G。根据自己需要设定参数。1./dbgen  -s 2
+我们会发现dbgen目录里增加了许多文件，正是我们后续需要的。
+5. 建表dss.ddl文件里为建表语句，如下：
+1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465666768CREATE TABLE NATION  ( N_NATIONKEY  INTEGER NOT NULL,                            N_NAME       CHAR(25) NOT NULL,                            N_REGIONKEY  INTEGER NOT NULL,                            N_COMMENT    VARCHAR(152));CREATE TABLE REGION  ( R_REGIONKEY  INTEGER NOT NULL,                            R_NAME       CHAR(25) NOT NULL,                            R_COMMENT    VARCHAR(152));CREATE TA
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -1138,8 +1173,14 @@
           应该有人和我有相同的经历，当你预先安装了JDK1.8，遇到一些情况需要降低版本至1.7，下面的方法亲测有效。
 1. 修改配置环境变量(我的是64bit系统)JAVA_HOME = C:\Program Files\Java\jdk1.7.0_25
 CLASSPATH = .;C:\Program Files\Java\jdk1.7.0_25\lib
-Path = ;C:\Program Files
-          ...
+Path = ;C:\Program Files\Java\jdk1.7.0_25\bin;
+注意：把安装目录替换成自己的就好了。
+2.  找到环境变量”Path”, 把”C:/ProgramData/Oracle/Java/javapath”去掉.PS:这是1.8新增加的,在此目录下，会有3个exe的快捷方式java.exe、javaw.exe和javaws.exe
+3. 在”C:\Windows\System32”下找到java.exe、javaw.exe和javaws.exe删掉
+详细信息里面可以看到这是8版本的exe
+
+4. 关掉cmd重开,就能看到是新的版本(一定要关闭然后重启,不然的话新的环境变量不会在当前cmd生效)
+          
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2018/07/04/jdk1-8to1-7/#more" rel="contents">
@@ -1412,8 +1453,16 @@ Path = ;C:\Program Files
         
           
           Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Quick
-          ...
+Quick StartCreate a new post1$ hexo new "My New Post"
+More info: Writing
+Run server1$ hexo server
+More info: Server
+Generate static files1$ hexo generate
+More info: Generating
+Deploy to remote sites1$ hexo deploy
+More info: Deployment
+
+          
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2018/07/04/hello-world/#more" rel="contents">
