@@ -310,16 +310,9 @@
       
         
           
-          下午刚刚下过雨，晚风很是清凉。晚饭吃了一碗拌面有点撑，这么好的晚风可不能辜负，当然是去遛弯啦。新校区的周围空荡荡的，基本都到哪里都可以看到远处天空好看的渐变色。虽然没有老校区那种历史的积淀，走起来也觉得青葱自然。以前在老校区的时候我特别喜欢去敬业广场，晚上那里总是很热闹。我就坐在石凳上，看着爷爷奶奶或者爸爸妈妈带着小孩在院子里逛。小孩子的那种开心是非常有感染力的，会让你不知不觉中也嘴角上扬。所以即使敬业广场的砖路坑坑洼洼，夏夜的蚊子把人叮得满腿大包，我还是很喜欢坐在那。来了新校区，周围比较荒凉，最大的感觉是没什么人气。可是后来我渐渐地发现，南门广场总理像前好多附近小区的人会过来玩，坐在旁边的台阶上总能让我想起在八里台敬业广场的日子。总会慢慢变好的，都是这样。今天遛弯的时候走到东门，学活后边的小广场上也有许多人在乘凉，大概是东门离得最近了。这两个地方让我眼中的新校区慢慢变得活络起来，虽然蚊子比老校区的大还多。其实说这么多废话，我就是想试试图片能不能成功插进来。耶，搞定啦。谢谢你长得这么好看，还耐心地看到这了。
+            <p>下午刚刚下过雨，晚风很是清凉。晚饭吃了一碗拌面有点撑，这么好的晚风可不能辜负，当然是去遛弯啦。<br>新校区的周围空荡荡的，基本都到哪里都可以看到远处天空好看的渐变色。虽然没有老校区那种历史的积淀，走起来也觉得青葱自然。以前在老校区的时候我特别喜欢去敬业广场，晚上那里总是很热闹。我就坐在石凳上，看着爷爷奶奶或者爸爸妈妈带着小孩在院子里逛。小孩子的那种开心是非常有感染力的，会让你不知不觉中也嘴角上扬。所以即使敬业广场的砖路坑坑洼洼，夏夜的蚊子把人叮得满腿大包，我还是很喜欢坐在那。来了新校区，周围比较荒凉，最大的感觉是没什么人气。可是后来我渐渐地发现，南门广场总理像前好多附近小区的人会过来玩，坐在旁边的台阶上总能让我想起在八里台敬业广场的日子。总会慢慢变好的，都是这样。今天遛弯的时候走到东门，学活后边的小广场上也有许多人在乘凉，大概是东门离得最近了。这两个地方让我眼中的新校区慢慢变得活络起来，虽然蚊子比老校区的大还多。<br>其实说这么多废话，我就是想试试图片能不能成功插进来。<br>耶，搞定啦。<br>谢谢你长得这么好看，还耐心地看到这了。<br><img src="/2018/07/06/walk-on-campus/walk-on-the-campus.jpg" alt="avatar"></p>
 
           
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/07/06/walk-on-campus/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
         
       
     </div>
@@ -447,23 +440,18 @@
       
         
           
-          近期的项目开发需要部署节点在海外的服务器，AWS提供了12个月的免费套餐，对于团队初期做MVP来说是个非常好的选择 。对比很多海外的云服务器，AWS可以说是非常良心了。下面就讲一下AWS的云主机申请及部署的过程。
-一、申请aws账号进入aws官网 （aws.amazon.com），申请海外账号。（aws中国不对个人开放）填写账户密码信息、联系人信息，绑定信用卡，这个过程步骤很多，会进行一系列的验证，信用卡必须是有境外支付功能的卡，如VISA。这个过程我就不详细说了，按照提示一步步往下走就可以，AWS的工作人员服务很到位，期初我申请了aws中国区的账号，过程中遇到了问题，很快就有人跟我电话联系告诉我解决方法。当你搞定了第一步之后，我们就可以申请云主机并部署了。
-二、创建ec2实例1.进入aws参见 http://blog.csdn.net/qq_28629495/article/details/51363450秘钥文件为.pem结束的。
-2. 创建实例账户在控制台相关菜单中新建，流程中注意分配权限这部分也是参考CSDN上小伙伴的方法~
-三、安装lampp1.下载XShell，Xftp并安装2. 在aws主机上安装lampp参考：如何在Linux上安装xampp？https://jingyan.baidu.com/article/afd8f4de7976b034e286e90c.html
-四、将源代码传输到云主机上1.打开Xshell，新建会话主机： ec2-*amazonaws.com（在创建的实例上公网IP）用户名： ubuntu文件：.pem文件填写完成之后点击确定进行连接，连接成功后显示如下：
-2. 新建文件传输，将代码通过ftp传输到主机上。首先添加文件夹的写权限 chmod 777 /opt/lampp/htdocs/点击菜单栏上的【新建文件传输】按钮，显示如下，左侧为本地文件目录，右侧为aws主机目录，进入opt/lampp/htdocs目录下，将文件从本地拖到云主机的相应目录下，解压即可
-五、配置云主机MySQL1.进入 opt/lampp/bin目录，输入命令 ./mysql -uroot -p要求输入密码，MySQL初始密码为空，直接敲回车
-2.设置MySQL的密码，输入命令grant all privileges on . to ‘root‘@’%
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/07/05/aws-server-application-and-deployment/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
+            <p>近期的项目开发需要部署节点在海外的服务器，AWS提供了12个月的免费套餐，对于团队初期做MVP来说是个非常好的选择 。对比很多海外的云服务器，AWS可以说是非常良心了。下面就讲一下AWS的云主机申请及部署的过程。</p>
+<h3 id="一、申请aws账号"><a href="#一、申请aws账号" class="headerlink" title="一、申请aws账号"></a>一、申请aws账号</h3><p>进入aws官网 （aws.amazon.com），申请海外账号。（aws中国不对个人开放）<br>填写账户密码信息、联系人信息，绑定信用卡，这个过程步骤很多，会进行一系列的验证，信用卡必须是有境外支付功能的卡，如VISA。<br>这个过程我就不详细说了，按照提示一步步往下走就可以，AWS的工作人员服务很到位，期初我申请了aws中国区的账号，过程中遇到了问题，很快就有人跟我电话联系告诉我解决方法。<br>当你搞定了第一步之后，我们就可以申请云主机并部署了。</p>
+<h3 id="二、创建ec2实例"><a href="#二、创建ec2实例" class="headerlink" title="二、创建ec2实例"></a>二、创建ec2实例</h3><h4 id="1-进入aws"><a href="#1-进入aws" class="headerlink" title="1.进入aws"></a>1.进入aws</h4><p>参见 <a href="http://blog.csdn.net/qq_28629495/article/details/51363450" target="_blank" rel="noopener">http://blog.csdn.net/qq_28629495/article/details/51363450</a><br>秘钥文件为.pem结束的。</p>
+<h4 id="2-创建实例账户"><a href="#2-创建实例账户" class="headerlink" title="2. 创建实例账户"></a>2. 创建实例账户</h4><p>在控制台相关菜单中新建，流程中注意分配权限<br>这部分也是参考CSDN上小伙伴的方法~</p>
+<h3 id="三、安装lampp"><a href="#三、安装lampp" class="headerlink" title="三、安装lampp"></a>三、安装lampp</h3><h4 id="1-下载XShell，Xftp并安装"><a href="#1-下载XShell，Xftp并安装" class="headerlink" title="1.下载XShell，Xftp并安装"></a>1.下载XShell，Xftp并安装</h4><h4 id="2-在aws主机上安装lampp"><a href="#2-在aws主机上安装lampp" class="headerlink" title="2. 在aws主机上安装lampp"></a>2. 在aws主机上安装lampp</h4><p>参考：如何在Linux上安装xampp？<br><a href="https://jingyan.baidu.com/article/afd8f4de7976b034e286e90c.html" target="_blank" rel="noopener">https://jingyan.baidu.com/article/afd8f4de7976b034e286e90c.html</a></p>
+<h3 id="四、将源代码传输到云主机上"><a href="#四、将源代码传输到云主机上" class="headerlink" title="四、将源代码传输到云主机上"></a>四、将源代码传输到云主机上</h3><h4 id="1-打开Xshell，新建会话"><a href="#1-打开Xshell，新建会话" class="headerlink" title="1.打开Xshell，新建会话"></a>1.打开Xshell，新建会话</h4><p><img src="http://img.blog.csdn.net/20170923125252043?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvaGFueXVucGlhb3l1/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"><br>主机： ec2-<strong><strong><strong>*</strong></strong></strong>amazonaws.com（在创建的实例上公网IP）<br>用户名： ubuntu<br>文件：.pem文件<br>填写完成之后点击确定进行连接，连接成功后显示如下：<br><img src="http://img.blog.csdn.net/20170923125922326?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvaGFueXVucGlhb3l1/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
+<h4 id="2-新建文件传输，将代码通过ftp传输到主机上。"><a href="#2-新建文件传输，将代码通过ftp传输到主机上。" class="headerlink" title="2. 新建文件传输，将代码通过ftp传输到主机上。"></a>2. 新建文件传输，将代码通过ftp传输到主机上。</h4><p>首先添加文件夹的写权限 chmod 777 /opt/lampp/htdocs/<br>点击菜单栏上的【新建文件传输】按钮，显示如下，左侧为本地文件目录，右侧为aws主机目录，进入opt/lampp/htdocs目录下，将文件从本地拖到云主机的相应目录下，解压即可<br><img src="http://img.blog.csdn.net/20170923130011229?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvaGFueXVucGlhb3l1/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
+<h3 id="五、配置云主机MySQL"><a href="#五、配置云主机MySQL" class="headerlink" title="五、配置云主机MySQL"></a>五、配置云主机MySQL</h3><h4 id="1-进入-opt-lampp-bin目录，输入命令-mysql-uroot-p"><a href="#1-进入-opt-lampp-bin目录，输入命令-mysql-uroot-p" class="headerlink" title="1.进入 opt/lampp/bin目录，输入命令 ./mysql -uroot -p"></a>1.进入 opt/lampp/bin目录，输入命令 ./mysql -uroot -p</h4><p>要求输入密码，MySQL初始密码为空，直接敲回车</p>
+<h4 id="2-设置MySQL的密码，输入命令"><a href="#2-设置MySQL的密码，输入命令" class="headerlink" title="2.设置MySQL的密码，输入命令"></a>2.设置MySQL的密码，输入命令</h4><p>grant all privileges on <em>.</em> to ‘root‘@’%’ identified by ‘secret’ with grant option;<br>secret为新设置的密码</p>
+<h4 id="3-打开Navicat，新建连接"><a href="#3-打开Navicat，新建连接" class="headerlink" title="3.打开Navicat，新建连接"></a>3.打开Navicat，新建连接</h4><p>host：<strong><strong>**</strong></strong>（服务器的公网IP）<br>用户名：root<br>密码：secret</p>
+<h4 id="4-连接成功之后新建数据库，向数据库中插入表。"><a href="#4-连接成功之后新建数据库，向数据库中插入表。" class="headerlink" title="4.连接成功之后新建数据库，向数据库中插入表。"></a>4.连接成功之后新建数据库，向数据库中插入表。</h4>
+          
         
       
     </div>
@@ -591,8 +579,8 @@
       
         
           
-          很多系统处理忘记密码问题时会采用发送邮件的方式，这篇文章是我在开发过程中总结的方法，还碰到了让人哭笑不得的错误，当时也是花了好久时间才调试好，分享给大家。我开发用的是Yii2.0的高级模板。
-一、配置文件 common/config/main-local.php&apos;mailer&apos; =&gt; [
+            <p>很多系统处理忘记密码问题时会采用发送邮件的方式，这篇文章是我在开发过程中总结的方法，还碰到了让人哭笑不得的错误，当时也是花了好久时间才调试好，分享给大家。<br>我开发用的是Yii2.0的高级模板。</p>
+<h4 id="一、配置文件-common-config-main-local-php"><a href="#一、配置文件-common-config-main-local-php" class="headerlink" title="一、配置文件 common/config/main-local.php"></a>一、配置文件 common/config/main-local.php</h4><pre><code>&apos;mailer&apos; =&gt; [
         &apos;class&apos; =&gt; &apos;yii\swiftmailer\Mailer&apos;,
         &apos;viewPath&apos; =&gt; &apos;@common/mail&apos;,
         // send all mails to a file by default. You have to set
@@ -605,15 +593,21 @@
            &apos;username&apos; =&gt; &apos;youremail@163.com&apos;,
            &apos;password&apos; =&gt; &apos;yourAuthenticationCode&apos;,//此处非邮箱密码，而是开启smtp服务之后的授权码
            &apos;port&apos; =&gt; &apos;25&apos;,
-           &apos;encryption&apos; =&gt; &
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/07/05/yii2-email/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
+           &apos;encryption&apos; =&gt; &apos;tls&apos;,
+                       ],
+       &apos;messageConfig&apos;=&gt;[
+           &apos;charset&apos;=&gt;&apos;UTF-8&apos;,
+           &apos;from&apos;=&gt;[&apos;youremaill@163.com&apos;=&gt;&apos;admin&apos;]
+           ],
+            ],
+</code></pre><h4 id="二、使用方法"><a href="#二、使用方法" class="headerlink" title="二、使用方法"></a>二、使用方法</h4><pre><code>$mail = Yii::$app-&gt;mailer-&gt;compose();
+       $mail-&gt;setTo(&apos;***email***@163.com&apos;);
+       $mail-&gt;setSubject(&apos;Your subject&apos;);//主题中不要写test
+       $mail-&gt;setHtmlBody(&apos;Hello , Welcome !&apos;);
+</code></pre><h4 id="三、开启邮箱的SMTP服务"><a href="#三、开启邮箱的SMTP服务" class="headerlink" title="三、开启邮箱的SMTP服务"></a>三、开启邮箱的SMTP服务</h4><p>确保你用于发送邮件的邮箱开启了SMTP服务，我使用163邮箱，在设置-&gt;POP3/SMTP/IMAP可以开启SMTP服务。<br><img src="http://img.blog.csdn.net/20170924213642674?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvaGFueXVucGlhb3l1/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
+<h4 id="四、注意发送邮件的主题不能为test，否则发送不出去"><a href="#四、注意发送邮件的主题不能为test，否则发送不出去" class="headerlink" title="四、注意发送邮件的主题不能为test，否则发送不出去"></a>四、注意发送邮件的主题不能为test，否则发送不出去</h4><p>当你做好前三步之后，你还是不能成功发送邮件的话，看一下你在发送邮件时是否将主题设置成了test，没错！这样会发不出去的(′⌒`) 我在测试的时候一直用test做主题，一下午都没成功，摔桌！  改成别的主题一下子就成功了。<br>谢谢你长的这么好看，还这么有耐心的看完了(<em> ￣3)(ε￣ </em>)</p>
+
+          
         
       
     </div>
@@ -741,20 +735,13 @@
       
         
           
-          最近在使用Yii2.0框架开发，为了提高开发效率直接使用了一套Yii2.0的后台模板。调试js时，发现js里写的函数都找不到，仔细排查之后发现了问题在于Yii2框架代码块的问题。Yii2的代码里js被包在一个Block里，如下所示：
-123456&lt;script&gt;&lt;?php $this-&gt;beginBlock(&apos;js_end&apos;) ?&gt;//js代码&lt;?php $this-&gt;endBlock() ?&gt;&lt;/script&gt;&lt;?php $this-&gt;registerJs($this-&gt;blocks[&apos;js_end&apos;], yii\web\View::POS_LOAD) ?&gt;
-这段代码的意思是把script标签中的js代码看成是一个以js_end为名的js文件，在页面中加载进来。那么为什么会报错js未定义呢？是registerJs函数的第二个参数起了作用，它决定了这段js代码的加载顺序。registerJs的第二个参数可以是以下：
-1234567POS_HEAD：head结束标签之前POS_BEGIN：body开始标签之后POS_END：body结束标签之前POS_READY：页面加载完成之后
-原来是我们在页面加载完成之后才加载js，Block内的函数就成了window.onload里的函数，作用域在此局部，外部无法获取。因此我们需要将其放到全局作用域中。我使用了比较简单粗暴的方法，直接将定义Block及注册js的语句删掉即可。谢谢你长得这么好看，还这么耐心地看到这。
+            <p>最近在使用Yii2.0框架开发，为了提高开发效率直接使用了一套Yii2.0的后台模板。调试js时，发现js里写的函数都找不到，仔细排查之后发现了问题在于Yii2框架代码块的问题。<br>Yii2的代码里js被包在一个Block里，如下所示：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">&lt;?php $this-&gt;beginBlock(&apos;js_end&apos;) ?&gt;</span><br><span class="line">//js代码</span><br><span class="line">&lt;?php $this-&gt;endBlock() ?&gt;</span><br><span class="line">&lt;/script&gt;</span><br><span class="line">&lt;?php $this-&gt;registerJs($this-&gt;blocks[&apos;js_end&apos;], yii\web\View::POS_LOAD) ?&gt;</span><br></pre></td></tr></table></figure>
+<p>这段代码的意思是把script标签中的js代码看成是一个以js_end为名的js文件，在页面中加载进来。那么为什么会报错js未定义呢？是registerJs函数的第二个参数起了作用，它决定了这段js代码的加载顺序。<br>registerJs的第二个参数可以是以下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">POS_HEAD：head结束标签之前</span><br><span class="line"></span><br><span class="line">POS_BEGIN：body开始标签之后</span><br><span class="line"></span><br><span class="line">POS_END：body结束标签之前</span><br><span class="line"></span><br><span class="line">POS_READY：页面加载完成之后</span><br></pre></td></tr></table></figure>
+<p>原来是我们在页面加载完成之后才加载js，Block内的函数就成了window.onload里的函数，作用域在此局部，外部无法获取。因此我们需要将其放到全局作用域中。<br>我使用了比较简单粗暴的方法，直接将定义Block及注册js的语句删掉即可。<br>谢谢你长得这么好看，还这么耐心地看到这。</p>
 
           
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/07/05/yii2-js-function-undefined/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
         
       
     </div>
@@ -882,18 +869,11 @@
       
         
           
-          问题最近处理数据时需要将txt文件转化成csv格式，txt中正常存储显示的中文在写入到csv文件时变成了乱码，文件的编码未能正确处理中文，需要在写入csv文件时指定编码。
-解决方法1234csvfile = file(&apos;data.csv&apos;, &apos;wb&apos;)# Display chinese correctlycsvfile.write(codecs.BOM_UTF8)spamwriter = csv.writer(csvfile)
-关键的一句话就是csvfile.write(codecs.BOM_UTF8)，能够正常显示中文。
+            <h1 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h1><p>最近处理数据时需要将txt文件转化成csv格式，txt中正常存储显示的中文在写入到csv文件时变成了乱码，文件的编码未能正确处理中文，需要在写入csv文件时指定编码。</p>
+<h1 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">csvfile = file(&apos;data.csv&apos;, &apos;wb&apos;)</span><br><span class="line"># Display chinese correctly</span><br><span class="line">csvfile.write(codecs.BOM_UTF8)</span><br><span class="line">spamwriter = csv.writer(csvfile)</span><br></pre></td></tr></table></figure>
+<p>关键的一句话就是<strong><em>csvfile.write(codecs.BOM_UTF8)</em></strong>，能够正常显示中文。</p>
 
           
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/07/05/python-write-in-csv-file-unidentifiable-chinese-code/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
         
       
     </div>
@@ -1021,28 +1001,29 @@
       
         
           
-          使用TPC-H可以自动生成大量数据，下面介绍ubuntu中的使用方法。
-1.下载TPC-H的生成工具http://www.tpc.org/tpch/ 奉上链接
-网盘链接：https://pan.baidu.com/s/1u3_bwZbyWKrFGqdVzV2_7g 密码：sgnw
-2.解压原文件3.修改makefile文件进入dbgen目录1cd dbgen
-复制makefile.suite到makefile
-1cp makefile.suite makefile
-修改makefile文件
-1vim makefile
-修改为如下内容（gcc要是小写的，因为这个问题百度了一小时左右-_-||）
-4.执行make，dbgen命令生成表结构和数据如果你之前生成过数据表，可以执行make clean先清除一下再执行以下命令。1make
-执行dbgen，生成数据表，大小为2G。根据自己需要设定参数。1./dbgen  -s 2
-我们会发现dbgen目录里增加了许多文件，正是我们后续需要的。
-5. 建表dss.ddl文件里为建表语句，如下：
-1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465666768CREATE TABLE NATION  ( N_NATIONKEY  INTEGER NOT NULL,                            N_NAME       CHAR(25) NOT NULL,                            N_REGIONKEY  INTEGER NOT NULL,                            N_COMMENT    VARCHAR(152));CREATE TABLE REGION  ( R_REGIONKEY  INTEGER NOT NULL,                            R_NAME       CHAR(25) NOT NULL,                            R_COMMENT    VARCHAR(152));CREATE TA
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/07/04/tpc-h-generage-dataset/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
+            <p>使用TPC-H可以自动生成大量数据，下面介绍ubuntu中的使用方法。</p>
+<h4 id="1-下载TPC-H的生成工具"><a href="#1-下载TPC-H的生成工具" class="headerlink" title="1.下载TPC-H的生成工具"></a>1.下载TPC-H的生成工具</h4><p><a href="http://www.tpc.org/tpch/" target="_blank" rel="noopener">http://www.tpc.org/tpch/</a> 奉上链接</p>
+<p>网盘链接：<a href="https://pan.baidu.com/s/1u3_bwZbyWKrFGqdVzV2_7g" target="_blank" rel="noopener">https://pan.baidu.com/s/1u3_bwZbyWKrFGqdVzV2_7g</a> 密码：sgnw</p>
+<h4 id="2-解压原文件"><a href="#2-解压原文件" class="headerlink" title="2.解压原文件"></a>2.解压原文件</h4><h4 id="3-修改makefile文件"><a href="#3-修改makefile文件" class="headerlink" title="3.修改makefile文件"></a>3.修改makefile文件</h4><p>进入dbgen目录<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd dbgen</span><br></pre></td></tr></table></figure></p>
+<p>复制makefile.suite到makefile</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cp makefile.suite makefile</span><br></pre></td></tr></table></figure>
+<p>修改makefile文件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim makefile</span><br></pre></td></tr></table></figure>
+<p>修改为如下内容（gcc要是小写的，因为这个问题百度了一小时左右-_-||）<br><img src="//img-blog.csdn.net/20180321110545729?watermark/2/text/Ly9ibG9nLmNzZG4ubmV0L2hhbnl1bnBpYW95dQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="这里写图片描述"></p>
+<h4 id="4-执行make，dbgen命令生成表结构和数据"><a href="#4-执行make，dbgen命令生成表结构和数据" class="headerlink" title="4.执行make，dbgen命令生成表结构和数据"></a>4.执行make，dbgen命令生成表结构和数据</h4><p>如果你之前生成过数据表，可以执行make clean先清除一下再执行以下命令。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">make</span><br></pre></td></tr></table></figure></p>
+<p>执行dbgen，生成数据表，大小为2G。根据自己需要设定参数。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./dbgen  -s 2</span><br></pre></td></tr></table></figure></p>
+<p>我们会发现dbgen目录里增加了许多文件，正是我们后续需要的。</p>
+<h4 id="5-建表"><a href="#5-建表" class="headerlink" title="5. 建表"></a>5. 建表</h4><p>dss.ddl文件里为建表语句，如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br></pre></td><td class="code"><pre><span class="line">CREATE TABLE NATION  ( N_NATIONKEY  INTEGER NOT NULL,</span><br><span class="line">                            N_NAME       CHAR(25) NOT NULL,</span><br><span class="line">                            N_REGIONKEY  INTEGER NOT NULL,</span><br><span class="line">                            N_COMMENT    VARCHAR(152));</span><br><span class="line"></span><br><span class="line">CREATE TABLE REGION  ( R_REGIONKEY  INTEGER NOT NULL,</span><br><span class="line">                            R_NAME       CHAR(25) NOT NULL,</span><br><span class="line">                            R_COMMENT    VARCHAR(152));</span><br><span class="line"></span><br><span class="line">CREATE TABLE PART  ( P_PARTKEY     INTEGER NOT NULL,</span><br><span class="line">                          P_NAME        VARCHAR(55) NOT NULL,</span><br><span class="line">                          P_MFGR        CHAR(25) NOT NULL,</span><br><span class="line">                          P_BRAND       CHAR(10) NOT NULL,</span><br><span class="line">                          P_TYPE        VARCHAR(25) NOT NULL,</span><br><span class="line">                          P_SIZE        INTEGER NOT NULL,</span><br><span class="line">                          P_CONTAINER   CHAR(10) NOT NULL,</span><br><span class="line">                          P_RETAILPRICE DECIMAL(15,2) NOT NULL,</span><br><span class="line">                          P_COMMENT     VARCHAR(23) NOT NULL );</span><br><span class="line"></span><br><span class="line">CREATE TABLE SUPPLIER ( S_SUPPKEY     INTEGER NOT NULL,</span><br><span class="line">                             S_NAME        CHAR(25) NOT NULL,</span><br><span class="line">                             S_ADDRESS     VARCHAR(40) NOT NULL,</span><br><span class="line">                             S_NATIONKEY   INTEGER NOT NULL,</span><br><span class="line">                             S_PHONE       CHAR(15) NOT NULL,</span><br><span class="line">                             S_ACCTBAL     DECIMAL(15,2) NOT NULL,</span><br><span class="line">                             S_COMMENT     VARCHAR(101) NOT NULL);</span><br><span class="line"></span><br><span class="line">CREATE TABLE PARTSUPP ( PS_PARTKEY     INTEGER NOT NULL,</span><br><span class="line">                             PS_SUPPKEY     INTEGER NOT NULL,</span><br><span class="line">                             PS_AVAILQTY    INTEGER NOT NULL,</span><br><span class="line">                             PS_SUPPLYCOST  DECIMAL(15,2)  NOT NULL,</span><br><span class="line">                             PS_COMMENT     VARCHAR(199) NOT NULL );</span><br><span class="line"></span><br><span class="line">CREATE TABLE CUSTOMER ( C_CUSTKEY     INTEGER NOT NULL,</span><br><span class="line">                             C_NAME        VARCHAR(25) NOT NULL,</span><br><span class="line">                             C_ADDRESS     VARCHAR(40) NOT NULL,</span><br><span class="line">                             C_NATIONKEY   INTEGER NOT NULL,</span><br><span class="line">                             C_PHONE       CHAR(15) NOT NULL,</span><br><span class="line">                             C_ACCTBAL     DECIMAL(15,2)   NOT NULL,</span><br><span class="line">                             C_MKTSEGMENT  CHAR(10) NOT NULL,</span><br><span class="line">                             C_COMMENT     VARCHAR(117) NOT NULL);</span><br><span class="line"></span><br><span class="line">CREATE TABLE ORDERS  ( O_ORDERKEY       INTEGER NOT NULL,</span><br><span class="line">                           O_CUSTKEY        INTEGER NOT NULL,</span><br><span class="line">                           O_ORDERSTATUS    CHAR(1) NOT NULL,</span><br><span class="line">                           O_TOTALPRICE     DECIMAL(15,2) NOT NULL,</span><br><span class="line">                           O_ORDERDATE      DATE NOT NULL,</span><br><span class="line">                           O_ORDERPRIORITY  CHAR(15) NOT NULL,  </span><br><span class="line">                           O_CLERK          CHAR(15) NOT NULL, </span><br><span class="line">                           O_SHIPPRIORITY   INTEGER NOT NULL,</span><br><span class="line">                           O_COMMENT        VARCHAR(79) NOT NULL);</span><br><span class="line"></span><br><span class="line">CREATE TABLE LINEITEM ( L_ORDERKEY    INTEGER NOT NULL,</span><br><span class="line">                             L_PARTKEY     INTEGER NOT NULL,</span><br><span class="line">                             L_SUPPKEY     INTEGER NOT NULL,</span><br><span class="line">                             L_LINENUMBER  INTEGER NOT NULL,</span><br><span class="line">                             L_QUANTITY    DECIMAL(15,2) NOT NULL,</span><br><span class="line">                             L_EXTENDEDPRICE  DECIMAL(15,2) NOT NULL,</span><br><span class="line">                             L_DISCOUNT    DECIMAL(15,2) NOT NULL,</span><br><span class="line">                             L_TAX         DECIMAL(15,2) NOT NULL,</span><br><span class="line">                             L_RETURNFLAG  CHAR(1) NOT NULL,</span><br><span class="line">                             L_LINESTATUS  CHAR(1) NOT NULL,</span><br><span class="line">                             L_SHIPDATE    DATE NOT NULL,</span><br><span class="line">                             L_COMMITDATE  DATE NOT NULL,</span><br><span class="line">                             L_RECEIPTDATE DATE NOT NULL,</span><br><span class="line">                             L_SHIPINSTRUCT CHAR(25) NOT NULL,</span><br><span class="line">                             L_SHIPMODE     CHAR(10) NOT NULL,</span><br><span class="line">                             L_COMMENT      VARCHAR(44) NOT NULL);</span><br></pre></td></tr></table></figure>
+<h4 id="6-插入数据"><a href="#6-插入数据" class="headerlink" title="6. 插入数据"></a>6. 插入数据</h4><p>第4步生成了8个以tbl结尾的文件对应8张表中的数据，首先去除数据中每行末尾的‘|’，代码如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;iostream&gt;</span><br><span class="line">#include &lt;fstream&gt;</span><br><span class="line">#include &lt;string&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">int main(int argc, const char * argv[]) &#123;</span><br><span class="line">    string s;</span><br><span class="line">    ifstream in;</span><br><span class="line">    in.open(&quot;lineitem.tbl&quot;);</span><br><span class="line">    ofstream out;</span><br><span class="line">    out.open(&quot;lineitem1.tbl&quot;);</span><br><span class="line">    if (in.is_open()) &#123;</span><br><span class="line">        while (getline(in, s)) &#123;</span><br><span class="line">            int len = s.length();</span><br><span class="line">            int i = len-1;</span><br><span class="line">            //将最后一个竖号去掉才能满足postgresql的数据读取</span><br><span class="line">            if (s[i] == &apos;|&apos;) </span><br><span class="line">                s[i] = &apos;\n&apos;;</span><br><span class="line">            out &lt;&lt; s;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    out.close();</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>接着通过copy命令导入数据</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">copy nation from &apos;/usr/local/pgsql/sql/table/nation1.tbl&apos; WITH DELIMITER AS &apos;|&apos;;</span><br><span class="line">copy part from &apos;/usr/local/pgsql/sql/table/part1.tbl&apos; WITH DELIMITER AS &apos;|&apos;;</span><br><span class="line">copy region from &apos;/usr/local/pgsql/sql/table/region1.tbl&apos; WITH DELIMITER AS &apos;|&apos;;</span><br><span class="line">copy partsupp from &apos;/usr/local/pgsql/sql/table/partsupp1.tbl&apos; WITH DELIMITER AS &apos;|&apos;;</span><br><span class="line">copy supplier from &apos;/usr/local/pgsql/sql/table/supplier1.tbl&apos; WITH DELIMITER AS &apos;|&apos;;</span><br><span class="line">copy customer from &apos;/usr/local/pgsql/sql/table/customer1.tbl&apos; WITH DELIMITER AS &apos;|&apos;;</span><br><span class="line">copy lineitem from &apos;/usr/local/pgsql/sql/table/lineitem1.tbl&apos; WITH DELIMITER AS &apos;|&apos;;</span><br><span class="line">copy orders from &apos;/usr/local/pgsql/sql/table/orders1.tbl&apos; WITH DELIMITER AS &apos;|&apos;;</span><br></pre></td></tr></table></figure>
+<h4 id="7-建立主外键关系"><a href="#7-建立主外键关系" class="headerlink" title="7.建立主外键关系"></a>7.建立主外键关系</h4><p>建立主外键关系要在插入数据后，否则一些数据会因为外键不存在无法插入，相信我。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br></pre></td><td class="code"><pre><span class="line">-- For table REGION</span><br><span class="line">ALTER TABLE REGION</span><br><span class="line">ADD PRIMARY KEY (R_REGIONKEY);</span><br><span class="line"></span><br><span class="line">-- For table NATION</span><br><span class="line">ALTER TABLE NATION</span><br><span class="line">ADD PRIMARY KEY (N_NATIONKEY);</span><br><span class="line"></span><br><span class="line">ALTER TABLE NATION</span><br><span class="line">ADD FOREIGN KEY (N_REGIONKEY) references REGION;</span><br><span class="line"></span><br><span class="line">COMMIT WORK;</span><br><span class="line"></span><br><span class="line">-- For table PART</span><br><span class="line">ALTER TABLE PART</span><br><span class="line">ADD PRIMARY KEY (P_PARTKEY);</span><br><span class="line"></span><br><span class="line">COMMIT WORK;</span><br><span class="line"></span><br><span class="line">-- For table SUPPLIER</span><br><span class="line">ALTER TABLE SUPPLIER</span><br><span class="line">ADD PRIMARY KEY (S_SUPPKEY);</span><br><span class="line"></span><br><span class="line">ALTER TABLE SUPPLIER</span><br><span class="line">ADD FOREIGN KEY (S_NATIONKEY) references NATION;</span><br><span class="line"></span><br><span class="line">COMMIT WORK;</span><br><span class="line"></span><br><span class="line">-- For table PARTSUPP</span><br><span class="line">ALTER TABLE PARTSUPP</span><br><span class="line">ADD PRIMARY KEY (PS_PARTKEY,PS_SUPPKEY);</span><br><span class="line"></span><br><span class="line">COMMIT WORK;</span><br><span class="line"></span><br><span class="line">-- For table CUSTOMER</span><br><span class="line">ALTER TABLE CUSTOMER</span><br><span class="line">ADD PRIMARY KEY (C_CUSTKEY);</span><br><span class="line"></span><br><span class="line">ALTER TABLE CUSTOMER</span><br><span class="line">ADD FOREIGN KEY (C_NATIONKEY) references NATION;</span><br><span class="line"></span><br><span class="line">COMMIT WORK;</span><br><span class="line"></span><br><span class="line">-- For table LINEITEM</span><br><span class="line">ALTER TABLE LINEITEM</span><br><span class="line">ADD PRIMARY KEY (L_ORDERKEY,L_LINENUMBER);</span><br><span class="line"></span><br><span class="line">COMMIT WORK;</span><br><span class="line"></span><br><span class="line">-- For table ORDERS</span><br><span class="line">ALTER TABLE ORDERS</span><br><span class="line">ADD PRIMARY KEY (O_ORDERKEY);</span><br><span class="line"></span><br><span class="line">COMMIT WORK;</span><br><span class="line"></span><br><span class="line">-- For table PARTSUPP</span><br><span class="line">ALTER TABLE PARTSUPP</span><br><span class="line">ADD FOREIGN KEY (PS_SUPPKEY) references SUPPLIER;</span><br><span class="line"></span><br><span class="line">COMMIT WORK;</span><br><span class="line"></span><br><span class="line">ALTER TABLE PARTSUPP</span><br><span class="line">ADD FOREIGN KEY (PS_PARTKEY) references PART;</span><br><span class="line"></span><br><span class="line">COMMIT WORK;</span><br><span class="line"></span><br><span class="line">-- For table ORDERS</span><br><span class="line">ALTER TABLE ORDERS</span><br><span class="line">ADD FOREIGN KEY (O_CUSTKEY) references CUSTOMER;</span><br><span class="line"></span><br><span class="line">COMMIT WORK;</span><br><span class="line"></span><br><span class="line">-- For table LINEITEM</span><br><span class="line">ALTER TABLE LINEITEM</span><br><span class="line">ADD FOREIGN KEY (L_ORDERKEY)  references ORDERS;</span><br><span class="line"></span><br><span class="line">COMMIT WORK;</span><br><span class="line"></span><br><span class="line">ALTER TABLE LINEITEM</span><br><span class="line">ADD FOREIGN KEY (L_PARTKEY,L_SUPPKEY) references PARTSUPP;</span><br><span class="line"></span><br><span class="line">COMMIT WORK;</span><br></pre></td></tr></table></figure>
+<p>好啦，齐活儿！</p>
+
+          
         
       
     </div>
@@ -1170,24 +1151,17 @@
       
         
           
-          应该有人和我有相同的经历，当你预先安装了JDK1.8，遇到一些情况需要降低版本至1.7，下面的方法亲测有效。
-1. 修改配置环境变量(我的是64bit系统)JAVA_HOME = C:\Program Files\Java\jdk1.7.0_25
-CLASSPATH = .;C:\Program Files\Java\jdk1.7.0_25\lib
-Path = ;C:\Program Files\Java\jdk1.7.0_25\bin;
-注意：把安装目录替换成自己的就好了。
-2.  找到环境变量”Path”, 把”C:/ProgramData/Oracle/Java/javapath”去掉.PS:这是1.8新增加的,在此目录下，会有3个exe的快捷方式java.exe、javaw.exe和javaws.exe
-3. 在”C:\Windows\System32”下找到java.exe、javaw.exe和javaws.exe删掉
-详细信息里面可以看到这是8版本的exe
-
-4. 关掉cmd重开,就能看到是新的版本(一定要关闭然后重启,不然的话新的环境变量不会在当前cmd生效)
+            <p>应该有人和我有相同的经历，当你预先安装了JDK1.8，遇到一些情况需要降低版本至1.7，下面的方法亲测有效。</p>
+<h3 id="1-修改配置环境变量-我的是64bit系统"><a href="#1-修改配置环境变量-我的是64bit系统" class="headerlink" title="1. 修改配置环境变量(我的是64bit系统)"></a>1. 修改配置环境变量(我的是64bit系统)</h3><p>JAVA_HOME = C:\Program Files\Java\jdk1.7.0_25</p>
+<p>CLASSPATH = .;C:\Program Files\Java\jdk1.7.0_25\lib</p>
+<p>Path = ;C:\Program Files\Java\jdk1.7.0_25\bin;</p>
+<p>注意：把安装目录替换成自己的就好了。</p>
+<h3 id="2-找到环境变量”Path”-把”C-ProgramData-Oracle-Java-javapath”去掉"><a href="#2-找到环境变量”Path”-把”C-ProgramData-Oracle-Java-javapath”去掉" class="headerlink" title="2.  找到环境变量”Path”, 把”C:/ProgramData/Oracle/Java/javapath”去掉."></a>2.  找到环境变量”Path”, 把”C:/ProgramData/Oracle/Java/javapath”去掉.</h3><p>PS:这是1.8新增加的,在此目录下，会有3个exe的快捷方式java.exe、javaw.exe和javaws.exe</p>
+<h3 id="3-在”C-Windows-System32”下找到java-exe、javaw-exe和javaws-exe删掉"><a href="#3-在”C-Windows-System32”下找到java-exe、javaw-exe和javaws-exe删掉" class="headerlink" title="3. 在”C:\Windows\System32”下找到java.exe、javaw.exe和javaws.exe删掉"></a>3. 在”C:\Windows\System32”下找到java.exe、javaw.exe和javaws.exe删掉</h3><p><img src="https://img-blog.csdn.net/20180411113145289?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2hhbnl1bnBpYW95dQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="这里写图片描述"></p>
+<p>详细信息里面可以看到这是8版本的exe</p>
+<p><img src="https://img-blog.csdn.net/20180411113200124?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2hhbnl1bnBpYW95dQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="这里写图片描述"></p>
+<h3 id="4-关掉cmd重开-就能看到是新的版本-一定要关闭然后重启-不然的话新的环境变量不会在当前cmd生效"><a href="#4-关掉cmd重开-就能看到是新的版本-一定要关闭然后重启-不然的话新的环境变量不会在当前cmd生效" class="headerlink" title="4. 关掉cmd重开,就能看到是新的版本(一定要关闭然后重启,不然的话新的环境变量不会在当前cmd生效)"></a>4. 关掉cmd重开,就能看到是新的版本(一定要关闭然后重启,不然的话新的环境变量不会在当前cmd生效)</h3>
           
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/07/04/jdk1-8to1-7/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
         
       
     </div>
@@ -1315,16 +1289,9 @@ Path = ;C:\Program Files\Java\jdk1.7.0_25\bin;
       
         
           
-          最近大家都在看世界杯，这场四年一次的盛会让全世界的球迷都为之疯狂。
+            <p>最近大家都在看世界杯，这场四年一次的盛会让全世界的球迷都为之疯狂。</p>
 
           
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/07/04/let-us-watch-the-World-Cup/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
         
       
     </div>
@@ -1452,24 +1419,17 @@ Path = ;C:\Program Files\Java\jdk1.7.0_25\bin;
       
         
           
-          Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Quick StartCreate a new post1$ hexo new "My New Post"
-More info: Writing
-Run server1$ hexo server
-More info: Server
-Generate static files1$ hexo generate
-More info: Generating
-Deploy to remote sites1$ hexo deploy
-More info: Deployment
+            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
 
           
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/07/04/hello-world/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
         
       
     </div>
