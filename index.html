@@ -229,6 +229,140 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/04/index-column-size-too-large/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="云丫">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="云过飘雨">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/09/04/index-column-size-too-large/" itemprop="url">Index column size too large. The maximum column size is 767 bytes.</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-09-04T14:24:19+08:00">
+                2018-09-04
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/09/04/index-column-size-too-large/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/09/04/index-column-size-too-large/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>在MySQL数据库上建立索引时，出现错误Index column size too large. The maximum column size is 767 bytes.<br>由于 MySQL Innodb 引擎表索引字段长度的限制为 767 字节，因此对于多字节字符集的大字段（或者多字段组合索引），创建索引会出现上面的错误。</p>
+<h3 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h3><h5 id="Step-1-：设置参数-innodb-large-prefix-为-ON"><a href="#Step-1-：设置参数-innodb-large-prefix-为-ON" class="headerlink" title="Step 1 ：设置参数 innodb_large_prefix 为 ON"></a>Step 1 ：设置参数 innodb_large_prefix 为 ON</h5><p>set global innodb_file_format = BARRACUDA;<br>set global innodb_large_prefix = ON;</p>
+<h5 id="Step-2：创建表的时候指定表的-row-format-格式为-Dynamic-或者-Compressed"><a href="#Step-2：创建表的时候指定表的-row-format-格式为-Dynamic-或者-Compressed" class="headerlink" title="Step 2：创建表的时候指定表的 row format 格式为 Dynamic 或者 Compressed"></a>Step 2：创建表的时候指定表的 row format 格式为 Dynamic 或者 Compressed</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">create table tb_name</span><br><span class="line">(</span><br><span class="line">  ……</span><br><span class="line">) </span><br><span class="line">ROW_FORMAT=DYNAMIC ENGINE=InnoDB  DEFAULT CHARSET=utf8;</span><br></pre></td></tr></table></figure>
+<h5 id="Step-3：对于已经创建的表修改表的row-format"><a href="#Step-3：对于已经创建的表修改表的row-format" class="headerlink" title="Step 3：对于已经创建的表修改表的row_format"></a>Step 3：对于已经创建的表修改表的row_format</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">alter table &lt;table_name&gt; row_format=dynamic;</span><br><span class="line">alter table &lt;table_name&gt; row_format=compressed;</span><br></pre></td></tr></table></figure>
+<p>经过上述步骤之后，再继续创建索引就可以成功了。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alter table &lt;table_name&gt; add unique index(column_name);</span><br></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/23/whatever/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1441,156 +1575,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/04/tpc-h-generage-dataset/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="云丫">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="云过飘雨">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/07/04/tpc-h-generage-dataset/" itemprop="url">TPC-H生成数据集的方法</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-07-04T20:35:29+08:00">
-                2018-07-04
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2018/07/04/tpc-h-generage-dataset/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/07/04/tpc-h-generage-dataset/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>使用TPC-H可以自动生成大量数据，下面介绍ubuntu中的使用方法。</p>
-<h4 id="1-下载TPC-H的生成工具"><a href="#1-下载TPC-H的生成工具" class="headerlink" title="1.下载TPC-H的生成工具"></a>1.下载TPC-H的生成工具</h4><p><a href="http://www.tpc.org/tpch/" target="_blank" rel="noopener">http://www.tpc.org/tpch/</a> 奉上链接</p>
-<p>网盘链接：<a href="https://pan.baidu.com/s/1u3_bwZbyWKrFGqdVzV2_7g" target="_blank" rel="noopener">https://pan.baidu.com/s/1u3_bwZbyWKrFGqdVzV2_7g</a> 密码：sgnw</p>
-<h4 id="2-解压原文件"><a href="#2-解压原文件" class="headerlink" title="2.解压原文件"></a>2.解压原文件</h4><h4 id="3-修改makefile文件"><a href="#3-修改makefile文件" class="headerlink" title="3.修改makefile文件"></a>3.修改makefile文件</h4><p>进入dbgen目录<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd dbgen</span><br></pre></td></tr></table></figure></p>
-<p>复制makefile.suite到makefile</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cp makefile.suite makefile</span><br></pre></td></tr></table></figure>
-<p>修改makefile文件</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim makefile</span><br></pre></td></tr></table></figure>
-<p>修改为如下内容（gcc要是小写的，因为这个问题百度了一小时左右-_-||）<br><img src="//img-blog.csdn.net/20180321110545729?watermark/2/text/Ly9ibG9nLmNzZG4ubmV0L2hhbnl1bnBpYW95dQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="这里写图片描述"></p>
-<h4 id="4-执行make，dbgen命令生成表结构和数据"><a href="#4-执行make，dbgen命令生成表结构和数据" class="headerlink" title="4.执行make，dbgen命令生成表结构和数据"></a>4.执行make，dbgen命令生成表结构和数据</h4><p>如果你之前生成过数据表，可以执行make clean先清除一下再执行以下命令。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">make</span><br></pre></td></tr></table></figure></p>
-<p>执行dbgen，生成数据表，大小为2G。根据自己需要设定参数。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./dbgen  -s 2</span><br></pre></td></tr></table></figure></p>
-<p>我们会发现dbgen目录里增加了许多文件，正是我们后续需要的。</p>
-<h4 id="5-建表"><a href="#5-建表" class="headerlink" title="5. 建表"></a>5. 建表</h4><p>dss.ddl文件里为建表语句，如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br></pre></td><td class="code"><pre><span class="line">CREATE TABLE NATION  ( N_NATIONKEY  INTEGER NOT NULL,</span><br><span class="line">                            N_NAME       CHAR(25) NOT NULL,</span><br><span class="line">                            N_REGIONKEY  INTEGER NOT NULL,</span><br><span class="line">                            N_COMMENT    VARCHAR(152));</span><br><span class="line"></span><br><span class="line">CREATE TABLE REGION  ( R_REGIONKEY  INTEGER NOT NULL,</span><br><span class="line">                            R_NAME       CHAR(25) NOT NULL,</span><br><span class="line">                            R_COMMENT    VARCHAR(152));</span><br><span class="line"></span><br><span class="line">CREATE TABLE PART  ( P_PARTKEY     INTEGER NOT NULL,</span><br><span class="line">                          P_NAME        VARCHAR(55) NOT NULL,</span><br><span class="line">                          P_MFGR        CHAR(25) NOT NULL,</span><br><span class="line">                          P_BRAND       CHAR(10) NOT NULL,</span><br><span class="line">                          P_TYPE        VARCHAR(25) NOT NULL,</span><br><span class="line">                          P_SIZE        INTEGER NOT NULL,</span><br><span class="line">                          P_CONTAINER   CHAR(10) NOT NULL,</span><br><span class="line">                          P_RETAILPRICE DECIMAL(15,2) NOT NULL,</span><br><span class="line">                          P_COMMENT     VARCHAR(23) NOT NULL );</span><br><span class="line"></span><br><span class="line">CREATE TABLE SUPPLIER ( S_SUPPKEY     INTEGER NOT NULL,</span><br><span class="line">                             S_NAME        CHAR(25) NOT NULL,</span><br><span class="line">                             S_ADDRESS     VARCHAR(40) NOT NULL,</span><br><span class="line">                             S_NATIONKEY   INTEGER NOT NULL,</span><br><span class="line">                             S_PHONE       CHAR(15) NOT NULL,</span><br><span class="line">                             S_ACCTBAL     DECIMAL(15,2) NOT NULL,</span><br><span class="line">                             S_COMMENT     VARCHAR(101) NOT NULL);</span><br><span class="line"></span><br><span class="line">CREATE TABLE PARTSUPP ( PS_PARTKEY     INTEGER NOT NULL,</span><br><span class="line">                             PS_SUPPKEY     INTEGER NOT NULL,</span><br><span class="line">                             PS_AVAILQTY    INTEGER NOT NULL,</span><br><span class="line">                             PS_SUPPLYCOST  DECIMAL(15,2)  NOT NULL,</span><br><span class="line">                             PS_COMMENT     VARCHAR(199) NOT NULL );</span><br><span class="line"></span><br><span class="line">CREATE TABLE CUSTOMER ( C_CUSTKEY     INTEGER NOT NULL,</span><br><span class="line">                             C_NAME        VARCHAR(25) NOT NULL,</span><br><span class="line">                             C_ADDRESS     VARCHAR(40) NOT NULL,</span><br><span class="line">                             C_NATIONKEY   INTEGER NOT NULL,</span><br><span class="line">                             C_PHONE       CHAR(15) NOT NULL,</span><br><span class="line">                             C_ACCTBAL     DECIMAL(15,2)   NOT NULL,</span><br><span class="line">                             C_MKTSEGMENT  CHAR(10) NOT NULL,</span><br><span class="line">                             C_COMMENT     VARCHAR(117) NOT NULL);</span><br><span class="line"></span><br><span class="line">CREATE TABLE ORDERS  ( O_ORDERKEY       INTEGER NOT NULL,</span><br><span class="line">                           O_CUSTKEY        INTEGER NOT NULL,</span><br><span class="line">                           O_ORDERSTATUS    CHAR(1) NOT NULL,</span><br><span class="line">                           O_TOTALPRICE     DECIMAL(15,2) NOT NULL,</span><br><span class="line">                           O_ORDERDATE      DATE NOT NULL,</span><br><span class="line">                           O_ORDERPRIORITY  CHAR(15) NOT NULL,  </span><br><span class="line">                           O_CLERK          CHAR(15) NOT NULL, </span><br><span class="line">                           O_SHIPPRIORITY   INTEGER NOT NULL,</span><br><span class="line">                           O_COMMENT        VARCHAR(79) NOT NULL);</span><br><span class="line"></span><br><span class="line">CREATE TABLE LINEITEM ( L_ORDERKEY    INTEGER NOT NULL,</span><br><span class="line">                             L_PARTKEY     INTEGER NOT NULL,</span><br><span class="line">                             L_SUPPKEY     INTEGER NOT NULL,</span><br><span class="line">                             L_LINENUMBER  INTEGER NOT NULL,</span><br><span class="line">                             L_QUANTITY    DECIMAL(15,2) NOT NULL,</span><br><span class="line">                             L_EXTENDEDPRICE  DECIMAL(15,2) NOT NULL,</span><br><span class="line">                             L_DISCOUNT    DECIMAL(15,2) NOT NULL,</span><br><span class="line">                             L_TAX         DECIMAL(15,2) NOT NULL,</span><br><span class="line">                             L_RETURNFLAG  CHAR(1) NOT NULL,</span><br><span class="line">                             L_LINESTATUS  CHAR(1) NOT NULL,</span><br><span class="line">                             L_SHIPDATE    DATE NOT NULL,</span><br><span class="line">                             L_COMMITDATE  DATE NOT NULL,</span><br><span class="line">                             L_RECEIPTDATE DATE NOT NULL,</span><br><span class="line">                             L_SHIPINSTRUCT CHAR(25) NOT NULL,</span><br><span class="line">                             L_SHIPMODE     CHAR(10) NOT NULL,</span><br><span class="line">                             L_COMMENT      VARCHAR(44) NOT NULL);</span><br></pre></td></tr></table></figure>
-<h4 id="6-插入数据"><a href="#6-插入数据" class="headerlink" title="6. 插入数据"></a>6. 插入数据</h4><p>第4步生成了8个以tbl结尾的文件对应8张表中的数据，首先去除数据中每行末尾的‘|’，代码如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;iostream&gt;</span><br><span class="line">#include &lt;fstream&gt;</span><br><span class="line">#include &lt;string&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">int main(int argc, const char * argv[]) &#123;</span><br><span class="line">    string s;</span><br><span class="line">    ifstream in;</span><br><span class="line">    in.open(&quot;lineitem.tbl&quot;);</span><br><span class="line">    ofstream out;</span><br><span class="line">    out.open(&quot;lineitem1.tbl&quot;);</span><br><span class="line">    if (in.is_open()) &#123;</span><br><span class="line">        while (getline(in, s)) &#123;</span><br><span class="line">            int len = s.length();</span><br><span class="line">            int i = len-1;</span><br><span class="line">            //将最后一个竖号去掉才能满足postgresql的数据读取</span><br><span class="line">            if (s[i] == &apos;|&apos;) </span><br><span class="line">                s[i] = &apos;\n&apos;;</span><br><span class="line">            out &lt;&lt; s;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    out.close();</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>接着通过copy命令导入数据</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">copy nation from &apos;/usr/local/pgsql/sql/table/nation1.tbl&apos; WITH DELIMITER AS &apos;|&apos;;</span><br><span class="line">copy part from &apos;/usr/local/pgsql/sql/table/part1.tbl&apos; WITH DELIMITER AS &apos;|&apos;;</span><br><span class="line">copy region from &apos;/usr/local/pgsql/sql/table/region1.tbl&apos; WITH DELIMITER AS &apos;|&apos;;</span><br><span class="line">copy partsupp from &apos;/usr/local/pgsql/sql/table/partsupp1.tbl&apos; WITH DELIMITER AS &apos;|&apos;;</span><br><span class="line">copy supplier from &apos;/usr/local/pgsql/sql/table/supplier1.tbl&apos; WITH DELIMITER AS &apos;|&apos;;</span><br><span class="line">copy customer from &apos;/usr/local/pgsql/sql/table/customer1.tbl&apos; WITH DELIMITER AS &apos;|&apos;;</span><br><span class="line">copy lineitem from &apos;/usr/local/pgsql/sql/table/lineitem1.tbl&apos; WITH DELIMITER AS &apos;|&apos;;</span><br><span class="line">copy orders from &apos;/usr/local/pgsql/sql/table/orders1.tbl&apos; WITH DELIMITER AS &apos;|&apos;;</span><br></pre></td></tr></table></figure>
-<h4 id="7-建立主外键关系"><a href="#7-建立主外键关系" class="headerlink" title="7.建立主外键关系"></a>7.建立主外键关系</h4><p>建立主外键关系要在插入数据后，否则一些数据会因为外键不存在无法插入，相信我。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br></pre></td><td class="code"><pre><span class="line">-- For table REGION</span><br><span class="line">ALTER TABLE REGION</span><br><span class="line">ADD PRIMARY KEY (R_REGIONKEY);</span><br><span class="line"></span><br><span class="line">-- For table NATION</span><br><span class="line">ALTER TABLE NATION</span><br><span class="line">ADD PRIMARY KEY (N_NATIONKEY);</span><br><span class="line"></span><br><span class="line">ALTER TABLE NATION</span><br><span class="line">ADD FOREIGN KEY (N_REGIONKEY) references REGION;</span><br><span class="line"></span><br><span class="line">COMMIT WORK;</span><br><span class="line"></span><br><span class="line">-- For table PART</span><br><span class="line">ALTER TABLE PART</span><br><span class="line">ADD PRIMARY KEY (P_PARTKEY);</span><br><span class="line"></span><br><span class="line">COMMIT WORK;</span><br><span class="line"></span><br><span class="line">-- For table SUPPLIER</span><br><span class="line">ALTER TABLE SUPPLIER</span><br><span class="line">ADD PRIMARY KEY (S_SUPPKEY);</span><br><span class="line"></span><br><span class="line">ALTER TABLE SUPPLIER</span><br><span class="line">ADD FOREIGN KEY (S_NATIONKEY) references NATION;</span><br><span class="line"></span><br><span class="line">COMMIT WORK;</span><br><span class="line"></span><br><span class="line">-- For table PARTSUPP</span><br><span class="line">ALTER TABLE PARTSUPP</span><br><span class="line">ADD PRIMARY KEY (PS_PARTKEY,PS_SUPPKEY);</span><br><span class="line"></span><br><span class="line">COMMIT WORK;</span><br><span class="line"></span><br><span class="line">-- For table CUSTOMER</span><br><span class="line">ALTER TABLE CUSTOMER</span><br><span class="line">ADD PRIMARY KEY (C_CUSTKEY);</span><br><span class="line"></span><br><span class="line">ALTER TABLE CUSTOMER</span><br><span class="line">ADD FOREIGN KEY (C_NATIONKEY) references NATION;</span><br><span class="line"></span><br><span class="line">COMMIT WORK;</span><br><span class="line"></span><br><span class="line">-- For table LINEITEM</span><br><span class="line">ALTER TABLE LINEITEM</span><br><span class="line">ADD PRIMARY KEY (L_ORDERKEY,L_LINENUMBER);</span><br><span class="line"></span><br><span class="line">COMMIT WORK;</span><br><span class="line"></span><br><span class="line">-- For table ORDERS</span><br><span class="line">ALTER TABLE ORDERS</span><br><span class="line">ADD PRIMARY KEY (O_ORDERKEY);</span><br><span class="line"></span><br><span class="line">COMMIT WORK;</span><br><span class="line"></span><br><span class="line">-- For table PARTSUPP</span><br><span class="line">ALTER TABLE PARTSUPP</span><br><span class="line">ADD FOREIGN KEY (PS_SUPPKEY) references SUPPLIER;</span><br><span class="line"></span><br><span class="line">COMMIT WORK;</span><br><span class="line"></span><br><span class="line">ALTER TABLE PARTSUPP</span><br><span class="line">ADD FOREIGN KEY (PS_PARTKEY) references PART;</span><br><span class="line"></span><br><span class="line">COMMIT WORK;</span><br><span class="line"></span><br><span class="line">-- For table ORDERS</span><br><span class="line">ALTER TABLE ORDERS</span><br><span class="line">ADD FOREIGN KEY (O_CUSTKEY) references CUSTOMER;</span><br><span class="line"></span><br><span class="line">COMMIT WORK;</span><br><span class="line"></span><br><span class="line">-- For table LINEITEM</span><br><span class="line">ALTER TABLE LINEITEM</span><br><span class="line">ADD FOREIGN KEY (L_ORDERKEY)  references ORDERS;</span><br><span class="line"></span><br><span class="line">COMMIT WORK;</span><br><span class="line"></span><br><span class="line">ALTER TABLE LINEITEM</span><br><span class="line">ADD FOREIGN KEY (L_PARTKEY,L_SUPPKEY) references PARTSUPP;</span><br><span class="line"></span><br><span class="line">COMMIT WORK;</span><br></pre></td></tr></table></figure>
-<p>好啦，齐活儿！</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1641,7 +1625,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">13</span>
+                  <span class="site-state-item-count">14</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -1654,7 +1638,7 @@
               
               <div class="site-state-item site-state-tags">
                 
-                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-count">8</span>
                   <span class="site-state-item-name">tags</span>
                 
               </div>

@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Python," />
+  <meta name="keywords" content="MySQL," />
 
 
 
@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="问题最近处理数据时需要将txt文件转化成csv格式，txt中正常存储显示的中文在写入到csv文件时变成了乱码，文件的编码未能正确处理中文，需要在写入csv文件时指定编码。 解决方法1234csvfile = file(&amp;apos;data.csv&amp;apos;, &amp;apos;wb&amp;apos;)# Display chinese correctlycsvfile.write(codecs.BOM_UT">
-<meta name="keywords" content="Python">
+<meta name="description" content="在MySQL数据库上建立索引时，出现错误Index column size too large. The maximum column size is 767 bytes.由于 MySQL Innodb 引擎表索引字段长度的限制为 767 字节，因此对于多字节字符集的大字段（或者多字段组合索引），创建索引会出现上面的错误。 解决方案Step 1 ：设置参数 innodb_large_prefix">
+<meta name="keywords" content="MySQL">
 <meta property="og:type" content="article">
-<meta property="og:title" content="python写入csv文件中文乱码解决方案">
-<meta property="og:url" content="http://yoursite.com/2018/07/05/python-write-in-csv-file-unidentifiable-chinese-code/index.html">
+<meta property="og:title" content="Index column size too large. The maximum column size is 767 bytes.">
+<meta property="og:url" content="http://yoursite.com/2018/09/04/index-column-size-too-large/index.html">
 <meta property="og:site_name" content="云过飘雨">
-<meta property="og:description" content="问题最近处理数据时需要将txt文件转化成csv格式，txt中正常存储显示的中文在写入到csv文件时变成了乱码，文件的编码未能正确处理中文，需要在写入csv文件时指定编码。 解决方法1234csvfile = file(&amp;apos;data.csv&amp;apos;, &amp;apos;wb&amp;apos;)# Display chinese correctlycsvfile.write(codecs.BOM_UT">
+<meta property="og:description" content="在MySQL数据库上建立索引时，出现错误Index column size too large. The maximum column size is 767 bytes.由于 MySQL Innodb 引擎表索引字段长度的限制为 767 字节，因此对于多字节字符集的大字段（或者多字段组合索引），创建索引会出现上面的错误。 解决方案Step 1 ：设置参数 innodb_large_prefix">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-07-06T06:18:09.441Z">
+<meta property="og:updated_time" content="2018-09-04T06:25:04.349Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="python写入csv文件中文乱码解决方案">
-<meta name="twitter:description" content="问题最近处理数据时需要将txt文件转化成csv格式，txt中正常存储显示的中文在写入到csv文件时变成了乱码，文件的编码未能正确处理中文，需要在写入csv文件时指定编码。 解决方法1234csvfile = file(&amp;apos;data.csv&amp;apos;, &amp;apos;wb&amp;apos;)# Display chinese correctlycsvfile.write(codecs.BOM_UT">
+<meta name="twitter:title" content="Index column size too large. The maximum column size is 767 bytes.">
+<meta name="twitter:description" content="在MySQL数据库上建立索引时，出现错误Index column size too large. The maximum column size is 767 bytes.由于 MySQL Innodb 引擎表索引字段长度的限制为 767 字节，因此对于多字节字符集的大字段（或者多字段组合索引），创建索引会出现上面的错误。 解决方案Step 1 ：设置参数 innodb_large_prefix">
 
 
 
@@ -120,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/07/05/python-write-in-csv-file-unidentifiable-chinese-code/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/09/04/index-column-size-too-large/"/>
 
 
 
 
 
-  <title>python写入csv文件中文乱码解决方案 | 云过飘雨</title>
+  <title>Index column size too large. The maximum column size is 767 bytes. | 云过飘雨</title>
   
 
 
@@ -233,7 +233,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/05/python-write-in-csv-file-unidentifiable-chinese-code/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/04/index-column-size-too-large/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="云丫">
@@ -250,7 +250,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">python写入csv文件中文乱码解决方案</h1>
+          <h1 class="post-title" itemprop="name headline">Index column size too large. The maximum column size is 767 bytes.</h1>
         
 
         <div class="post-meta">
@@ -262,8 +262,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-07-05T09:52:57+08:00">
-                2018-07-05
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-09-04T14:24:19+08:00">
+                2018-09-04
               </time>
             
 
@@ -281,8 +281,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/07/05/python-write-in-csv-file-unidentifiable-chinese-code/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/07/05/python-write-in-csv-file-unidentifiable-chinese-code/" itemprop="commentCount"></span>
+                <a href="/2018/09/04/index-column-size-too-large/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/09/04/index-column-size-too-large/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -315,10 +315,12 @@
       
 
       
-        <h1 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h1><p>最近处理数据时需要将txt文件转化成csv格式，txt中正常存储显示的中文在写入到csv文件时变成了乱码，文件的编码未能正确处理中文，需要在写入csv文件时指定编码。</p>
-<h1 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">csvfile = file(&apos;data.csv&apos;, &apos;wb&apos;)</span><br><span class="line"># Display chinese correctly</span><br><span class="line">csvfile.write(codecs.BOM_UTF8)</span><br><span class="line">spamwriter = csv.writer(csvfile)</span><br></pre></td></tr></table></figure>
-<p>关键的一句话就是<strong><em>csvfile.write(codecs.BOM_UTF8)</em></strong>，能够正常显示中文。</p>
-
+        <p>在MySQL数据库上建立索引时，出现错误Index column size too large. The maximum column size is 767 bytes.<br>由于 MySQL Innodb 引擎表索引字段长度的限制为 767 字节，因此对于多字节字符集的大字段（或者多字段组合索引），创建索引会出现上面的错误。</p>
+<h3 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h3><h5 id="Step-1-：设置参数-innodb-large-prefix-为-ON"><a href="#Step-1-：设置参数-innodb-large-prefix-为-ON" class="headerlink" title="Step 1 ：设置参数 innodb_large_prefix 为 ON"></a>Step 1 ：设置参数 innodb_large_prefix 为 ON</h5><p>set global innodb_file_format = BARRACUDA;<br>set global innodb_large_prefix = ON;</p>
+<h5 id="Step-2：创建表的时候指定表的-row-format-格式为-Dynamic-或者-Compressed"><a href="#Step-2：创建表的时候指定表的-row-format-格式为-Dynamic-或者-Compressed" class="headerlink" title="Step 2：创建表的时候指定表的 row format 格式为 Dynamic 或者 Compressed"></a>Step 2：创建表的时候指定表的 row format 格式为 Dynamic 或者 Compressed</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">create table tb_name</span><br><span class="line">(</span><br><span class="line">  ……</span><br><span class="line">) </span><br><span class="line">ROW_FORMAT=DYNAMIC ENGINE=InnoDB  DEFAULT CHARSET=utf8;</span><br></pre></td></tr></table></figure>
+<h5 id="Step-3：对于已经创建的表修改表的row-format"><a href="#Step-3：对于已经创建的表修改表的row-format" class="headerlink" title="Step 3：对于已经创建的表修改表的row_format"></a>Step 3：对于已经创建的表修改表的row_format</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">alter table &lt;table_name&gt; row_format=dynamic;</span><br><span class="line">alter table &lt;table_name&gt; row_format=compressed;</span><br></pre></td></tr></table></figure>
+<p>经过上述步骤之后，再继续创建索引就可以成功了。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alter table &lt;table_name&gt; add unique index(column_name);</span><br></pre></td></tr></table></figure>
       
     </div>
     
@@ -335,7 +337,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Python/" rel="tag"># Python</a>
+            <a href="/tags/MySQL/" rel="tag"># MySQL</a>
           
         </div>
       
@@ -348,8 +350,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/07/04/tpc-h-generage-dataset/" rel="next" title="TPC-H生成数据集的方法">
-                <i class="fa fa-chevron-left"></i> TPC-H生成数据集的方法
+              <a href="/2018/07/23/whatever/" rel="next" title="Whatever">
+                <i class="fa fa-chevron-left"></i> Whatever
               </a>
             
           </div>
@@ -357,10 +359,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/07/05/yii2-js-function-undefined/" rel="prev" title="Yii2.0 js函数未定义">
-                Yii2.0 js函数未定义 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -496,7 +494,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#问题"><span class="nav-number">1.</span> <span class="nav-text">问题</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#解决方法"><span class="nav-number">2.</span> <span class="nav-text">解决方法</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#解决方案"><span class="nav-number">1.</span> <span class="nav-text">解决方案</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Step-1-：设置参数-innodb-large-prefix-为-ON"><span class="nav-number">1.0.1.</span> <span class="nav-text">Step 1 ：设置参数 innodb_large_prefix 为 ON</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Step-2：创建表的时候指定表的-row-format-格式为-Dynamic-或者-Compressed"><span class="nav-number">1.0.2.</span> <span class="nav-text">Step 2：创建表的时候指定表的 row format 格式为 Dynamic 或者 Compressed</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Step-3：对于已经创建的表修改表的row-format"><span class="nav-number">1.0.3.</span> <span class="nav-text">Step 3：对于已经创建的表修改表的row_format</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
