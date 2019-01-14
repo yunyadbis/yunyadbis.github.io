@@ -229,6 +229,567 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/05/aws-server-application-and-deployment/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="云丫">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="云过飘雨">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/07/05/aws-server-application-and-deployment/" itemprop="url">AWS服务器申请及部署（一年免费版）</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-07-05T20:43:15+08:00">
+                2018-07-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/07/05/aws-server-application-and-deployment/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/07/05/aws-server-application-and-deployment/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>近期的项目开发需要部署节点在海外的服务器，AWS提供了12个月的免费套餐，对于团队初期做MVP来说是个非常好的选择 。对比很多海外的云服务器，AWS可以说是非常良心了。下面就讲一下AWS的云主机申请及部署的过程。</p>
+<h3 id="一、申请aws账号"><a href="#一、申请aws账号" class="headerlink" title="一、申请aws账号"></a>一、申请aws账号</h3><p>进入aws官网 （aws.amazon.com），申请海外账号。（aws中国不对个人开放）<br>填写账户密码信息、联系人信息，绑定信用卡，这个过程步骤很多，会进行一系列的验证，信用卡必须是有境外支付功能的卡，如VISA。<br>这个过程我就不详细说了，按照提示一步步往下走就可以，AWS的工作人员服务很到位，期初我申请了aws中国区的账号，过程中遇到了问题，很快就有人跟我电话联系告诉我解决方法。<br>当你搞定了第一步之后，我们就可以申请云主机并部署了。</p>
+<h3 id="二、创建ec2实例"><a href="#二、创建ec2实例" class="headerlink" title="二、创建ec2实例"></a>二、创建ec2实例</h3><h4 id="1-进入aws"><a href="#1-进入aws" class="headerlink" title="1.进入aws"></a>1.进入aws</h4><p>参见 <a href="http://blog.csdn.net/qq_28629495/article/details/51363450" target="_blank" rel="noopener">http://blog.csdn.net/qq_28629495/article/details/51363450</a><br>秘钥文件为.pem结束的。</p>
+<h4 id="2-创建实例账户"><a href="#2-创建实例账户" class="headerlink" title="2. 创建实例账户"></a>2. 创建实例账户</h4><p>在控制台相关菜单中新建，流程中注意分配权限<br>这部分也是参考CSDN上小伙伴的方法~</p>
+<h3 id="三、安装lampp"><a href="#三、安装lampp" class="headerlink" title="三、安装lampp"></a>三、安装lampp</h3><h4 id="1-下载XShell，Xftp并安装"><a href="#1-下载XShell，Xftp并安装" class="headerlink" title="1.下载XShell，Xftp并安装"></a>1.下载XShell，Xftp并安装</h4><h4 id="2-在aws主机上安装lampp"><a href="#2-在aws主机上安装lampp" class="headerlink" title="2. 在aws主机上安装lampp"></a>2. 在aws主机上安装lampp</h4><p>参考：如何在Linux上安装xampp？<br><a href="https://jingyan.baidu.com/article/afd8f4de7976b034e286e90c.html" target="_blank" rel="noopener">https://jingyan.baidu.com/article/afd8f4de7976b034e286e90c.html</a></p>
+<h3 id="四、将源代码传输到云主机上"><a href="#四、将源代码传输到云主机上" class="headerlink" title="四、将源代码传输到云主机上"></a>四、将源代码传输到云主机上</h3><h4 id="1-打开Xshell，新建会话"><a href="#1-打开Xshell，新建会话" class="headerlink" title="1.打开Xshell，新建会话"></a>1.打开Xshell，新建会话</h4><p><img src="/2018/07/05/aws-server-application-and-deployment/1.jpg" alt="这里写图片描述"><br>主机： ec2-<strong><strong><strong>*</strong></strong></strong>amazonaws.com（在创建的实例上公网IP）<br>用户名： ubuntu<br>文件：.pem文件<br>填写完成之后点击确定进行连接，连接成功后显示如下：<br><img src="/2018/07/05/aws-server-application-and-deployment/2.jpg" alt="这里写图片描述"></p>
+<h4 id="2-新建文件传输，将代码通过ftp传输到主机上。"><a href="#2-新建文件传输，将代码通过ftp传输到主机上。" class="headerlink" title="2. 新建文件传输，将代码通过ftp传输到主机上。"></a>2. 新建文件传输，将代码通过ftp传输到主机上。</h4><p>首先添加文件夹的写权限 chmod 777 /opt/lampp/htdocs/<br>点击菜单栏上的【新建文件传输】按钮，显示如下，左侧为本地文件目录，右侧为aws主机目录，进入opt/lampp/htdocs目录下，将文件从本地拖到云主机的相应目录下，解压即可<br><img src="/2018/07/05/aws-server-application-and-deployment/3.jpg" alt="这里写图片描述"></p>
+<h3 id="五、配置云主机MySQL"><a href="#五、配置云主机MySQL" class="headerlink" title="五、配置云主机MySQL"></a>五、配置云主机MySQL</h3><h4 id="1-进入-opt-lampp-bin目录，输入命令-mysql-uroot-p"><a href="#1-进入-opt-lampp-bin目录，输入命令-mysql-uroot-p" class="headerlink" title="1.进入 opt/lampp/bin目录，输入命令 ./mysql -uroot -p"></a>1.进入 opt/lampp/bin目录，输入命令 ./mysql -uroot -p</h4><p>要求输入密码，MySQL初始密码为空，直接敲回车</p>
+<h4 id="2-设置MySQL的密码，输入命令"><a href="#2-设置MySQL的密码，输入命令" class="headerlink" title="2.设置MySQL的密码，输入命令"></a>2.设置MySQL的密码，输入命令</h4><p>grant all privileges on <em>.</em> to ‘root‘@’%’ identified by ‘secret’ with grant option;<br>secret为新设置的密码</p>
+<h4 id="3-打开Navicat，新建连接"><a href="#3-打开Navicat，新建连接" class="headerlink" title="3.打开Navicat，新建连接"></a>3.打开Navicat，新建连接</h4><p>host：<strong><strong>**</strong></strong>（服务器的公网IP）<br>用户名：root<br>密码：secret</p>
+<h4 id="4-连接成功之后新建数据库，向数据库中插入表。"><a href="#4-连接成功之后新建数据库，向数据库中插入表。" class="headerlink" title="4.连接成功之后新建数据库，向数据库中插入表。"></a>4.连接成功之后新建数据库，向数据库中插入表。</h4>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/05/yii2-email/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="云丫">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="云过飘雨">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/07/05/yii2-email/" itemprop="url">Yii2.0 发送邮件</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-07-05T09:55:27+08:00">
+                2018-07-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/07/05/yii2-email/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/07/05/yii2-email/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>很多系统处理忘记密码问题时会采用发送邮件的方式，这篇文章是我在开发过程中总结的方法，还碰到了让人哭笑不得的错误，当时也是花了好久时间才调试好，分享给大家。<br>我开发用的是Yii2.0的高级模板。</p>
+<h4 id="一、配置文件-common-config-main-local-php"><a href="#一、配置文件-common-config-main-local-php" class="headerlink" title="一、配置文件 common/config/main-local.php"></a>一、配置文件 common/config/main-local.php</h4><pre><code>&apos;mailer&apos; =&gt; [
+        &apos;class&apos; =&gt; &apos;yii\swiftmailer\Mailer&apos;,
+        &apos;viewPath&apos; =&gt; &apos;@common/mail&apos;,
+        // send all mails to a file by default. You have to set
+        // &apos;useFileTransport&apos; to false and configure a transport
+        // for the mailer to send real emails.
+        &apos;useFileTransport&apos; =&gt; false,// false发送到真实的邮箱之中，true会将邮件缓存到文件中
+        &apos;transport&apos; =&gt; [
+           &apos;class&apos; =&gt; &apos;Swift_SmtpTransport&apos;,
+           &apos;host&apos; =&gt; &apos;smtp.163.com&apos;,  //每种邮箱的host配置不一样
+           &apos;username&apos; =&gt; &apos;youremail@163.com&apos;,
+           &apos;password&apos; =&gt; &apos;yourAuthenticationCode&apos;,//此处非邮箱密码，而是开启smtp服务之后的授权码
+           &apos;port&apos; =&gt; &apos;25&apos;,
+           &apos;encryption&apos; =&gt; &apos;tls&apos;,
+                       ],
+       &apos;messageConfig&apos;=&gt;[
+           &apos;charset&apos;=&gt;&apos;UTF-8&apos;,
+           &apos;from&apos;=&gt;[&apos;youremaill@163.com&apos;=&gt;&apos;admin&apos;]
+           ],
+            ],
+</code></pre><h4 id="二、使用方法"><a href="#二、使用方法" class="headerlink" title="二、使用方法"></a>二、使用方法</h4><pre><code>$mail = Yii::$app-&gt;mailer-&gt;compose();
+       $mail-&gt;setTo(&apos;***email***@163.com&apos;);
+       $mail-&gt;setSubject(&apos;Your subject&apos;);//主题中不要写test
+       $mail-&gt;setHtmlBody(&apos;Hello , Welcome !&apos;);
+</code></pre><h4 id="三、开启邮箱的SMTP服务"><a href="#三、开启邮箱的SMTP服务" class="headerlink" title="三、开启邮箱的SMTP服务"></a>三、开启邮箱的SMTP服务</h4><p>确保你用于发送邮件的邮箱开启了SMTP服务，我使用163邮箱，在设置-&gt;POP3/SMTP/IMAP可以开启SMTP服务。<br><img src="http://img.blog.csdn.net/20170924213642674?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvaGFueXVucGlhb3l1/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
+<h4 id="四、注意发送邮件的主题不能为test，否则发送不出去"><a href="#四、注意发送邮件的主题不能为test，否则发送不出去" class="headerlink" title="四、注意发送邮件的主题不能为test，否则发送不出去"></a>四、注意发送邮件的主题不能为test，否则发送不出去</h4><p>当你做好前三步之后，你还是不能成功发送邮件的话，看一下你在发送邮件时是否将主题设置成了test，没错！这样会发不出去的(′⌒`) 我在测试的时候一直用test做主题，一下午都没成功，摔桌！  改成别的主题一下子就成功了。<br>谢谢你长的这么好看，还这么有耐心的看完了(<em> ￣3)(ε￣ </em>)</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/05/yii2-js-function-undefined/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="云丫">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="云过飘雨">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/07/05/yii2-js-function-undefined/" itemprop="url">Yii2.0 js函数未定义</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-07-05T09:54:18+08:00">
+                2018-07-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/07/05/yii2-js-function-undefined/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/07/05/yii2-js-function-undefined/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>最近在使用Yii2.0框架开发，为了提高开发效率直接使用了一套Yii2.0的后台模板。调试js时，发现js里写的函数都找不到，仔细排查之后发现了问题在于Yii2框架代码块的问题。<br>Yii2的代码里js被包在一个Block里，如下所示：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">&lt;?php $this-&gt;beginBlock(&apos;js_end&apos;) ?&gt;</span><br><span class="line">//js代码</span><br><span class="line">&lt;?php $this-&gt;endBlock() ?&gt;</span><br><span class="line">&lt;/script&gt;</span><br><span class="line">&lt;?php $this-&gt;registerJs($this-&gt;blocks[&apos;js_end&apos;], yii\web\View::POS_LOAD) ?&gt;</span><br></pre></td></tr></table></figure>
+<p>这段代码的意思是把script标签中的js代码看成是一个以js_end为名的js文件，在页面中加载进来。那么为什么会报错js未定义呢？是registerJs函数的第二个参数起了作用，它决定了这段js代码的加载顺序。<br>registerJs的第二个参数可以是以下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">POS_HEAD：head结束标签之前</span><br><span class="line"></span><br><span class="line">POS_BEGIN：body开始标签之后</span><br><span class="line"></span><br><span class="line">POS_END：body结束标签之前</span><br><span class="line"></span><br><span class="line">POS_READY：页面加载完成之后</span><br></pre></td></tr></table></figure>
+<p>原来是我们在页面加载完成之后才加载js，Block内的函数就成了window.onload里的函数，作用域在此局部，外部无法获取。因此我们需要将其放到全局作用域中。<br>我使用了比较简单粗暴的方法，直接将定义Block及注册js的语句删掉即可。<br>谢谢你长得这么好看，还这么耐心地看到这。</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/05/python-write-in-csv-file-unidentifiable-chinese-code/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="云丫">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="云过飘雨">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/07/05/python-write-in-csv-file-unidentifiable-chinese-code/" itemprop="url">python写入csv文件中文乱码解决方案</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-07-05T09:52:57+08:00">
+                2018-07-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/07/05/python-write-in-csv-file-unidentifiable-chinese-code/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/07/05/python-write-in-csv-file-unidentifiable-chinese-code/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h1><p>最近处理数据时需要将txt文件转化成csv格式，txt中正常存储显示的中文在写入到csv文件时变成了乱码，文件的编码未能正确处理中文，需要在写入csv文件时指定编码。</p>
+<h1 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">csvfile = file(&apos;data.csv&apos;, &apos;wb&apos;)</span><br><span class="line"># Display chinese correctly</span><br><span class="line">csvfile.write(codecs.BOM_UTF8)</span><br><span class="line">spamwriter = csv.writer(csvfile)</span><br></pre></td></tr></table></figure>
+<p>关键的一句话就是<strong><em>csvfile.write(codecs.BOM_UTF8)</em></strong>，能够正常显示中文。</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/04/tpc-h-generage-dataset/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -822,7 +1383,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">14</span>
+                  <span class="site-state-item-count">18</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -882,7 +1443,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
