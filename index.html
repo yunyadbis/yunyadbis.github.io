@@ -248,7 +248,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/11/26/java-lang-outofmemoryerror/" itemprop="url">java-lang-outofmemoryerror</a></h1>
+                <a class="post-title-link" href="/2018/11/26/java-lang-outofmemoryerror/" itemprop="url">java.lang.OutOfMemoryError</a></h1>
         
 
         <div class="post-meta">
@@ -310,7 +310,7 @@
       
         
           
-            <p>通过spark-submit提交任务时，出现错误：Exception in thread “main” java.lang.OutOfMemoryError: GC overhead limit exceeded</p>
+            <p>通过spark-submit提交任务时，出现错误：<br>Exception in thread “main” java.lang.OutOfMemoryError: GC overhead limit exceeded</p>
 <h3 id="解决方案："><a href="#解决方案：" class="headerlink" title="解决方案："></a>解决方案：</h3><p>这两种错误之前我一直认为是executor的内存给的不够，但是仔细分析发现其实并不是executor内存给的不足，而是driver的内存给的不足。在standalone client模式下用spark-submit提交任务时（standalone模式部署时，默认使用的就是standalone client模式提交任务），我们自己写的程序（main）被称为driver，在不指定给driver分配内存时，默认分配的是512M。在这种情况下，如果处理的数据或者加载的数据很大（我是从hive中加载数据），driver就可能会爆内存，出现上面的OOM错误。</p>
 <h4 id="方法一：在spark-submit中指定-–driver-memory-memSize参数来设定driver的jvm内存大小，可以通过spark-submit-–help查看其他可以设置的参数。"><a href="#方法一：在spark-submit中指定-–driver-memory-memSize参数来设定driver的jvm内存大小，可以通过spark-submit-–help查看其他可以设置的参数。" class="headerlink" title="方法一：在spark-submit中指定 –driver-memory memSize参数来设定driver的jvm内存大小，可以通过spark-submit –help查看其他可以设置的参数。"></a>方法一：在spark-submit中指定 –driver-memory memSize参数来设定driver的jvm内存大小，可以通过spark-submit –help查看其他可以设置的参数。</h4><p>eg:</p>
 <p>./spark-submit \<br>  –master spark://7070 \<br>  –class $MAIN_CLASS \<br>  –executor-memory 3G \<br>  –total-executor-cores 10 \<br>  –driver-memory 2g \<br>  –name $APP_NAME \<br>  –conf “spark.executor.extraJavaOptions=-XX:+PrintGCDetails -XX:+PrintGCTimeStamps” \<br>  “$SPARK_APP_JAR” </p>
