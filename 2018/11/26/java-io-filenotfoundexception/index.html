@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="出现错误：Exception in thread “main” java.io.FileNotFoundException: file:/home/yunya/data/dbl_data/param/queries/query.txt (No such file or directory) 解决方案首先是通过搜索得到的答案：由spark的源码源码的注释可以知道,spark可以读取本地数据文件,但是">
+<meta name="description" content="出现错误：Exception in thread “main” java.io.FileNotFoundException:file:/home/yunya/data/dbl_data/param/queries/query.txt (No such file or directory) 解决方案首先是通过搜索得到的答案：由spark的源码源码的注释可以知道,spark可以读取本地数据文件,但是需">
 <meta property="og:type" content="article">
 <meta property="og:title" content="java.io.FileNotFoundException">
 <meta property="og:url" content="http://yoursite.com/2018/11/26/java-io-filenotfoundexception/index.html">
 <meta property="og:site_name" content="云过飘雨">
-<meta property="og:description" content="出现错误：Exception in thread “main” java.io.FileNotFoundException: file:/home/yunya/data/dbl_data/param/queries/query.txt (No such file or directory) 解决方案首先是通过搜索得到的答案：由spark的源码源码的注释可以知道,spark可以读取本地数据文件,但是">
+<meta property="og:description" content="出现错误：Exception in thread “main” java.io.FileNotFoundException:file:/home/yunya/data/dbl_data/param/queries/query.txt (No such file or directory) 解决方案首先是通过搜索得到的答案：由spark的源码源码的注释可以知道,spark可以读取本地数据文件,但是需">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-01-14T11:24:04.144Z">
+<meta property="og:updated_time" content="2019-04-11T06:54:03.577Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="java.io.FileNotFoundException">
-<meta name="twitter:description" content="出现错误：Exception in thread “main” java.io.FileNotFoundException: file:/home/yunya/data/dbl_data/param/queries/query.txt (No such file or directory) 解决方案首先是通过搜索得到的答案：由spark的源码源码的注释可以知道,spark可以读取本地数据文件,但是">
+<meta name="twitter:description" content="出现错误：Exception in thread “main” java.io.FileNotFoundException:file:/home/yunya/data/dbl_data/param/queries/query.txt (No such file or directory) 解决方案首先是通过搜索得到的答案：由spark的源码源码的注释可以知道,spark可以读取本地数据文件,但是需">
 
 
 
@@ -314,8 +314,8 @@
       
 
       
-        <p>出现错误：<br>Exception in thread “main” java.io.FileNotFoundException: file:/home/yunya/data/dbl_data/param/queries/query.txt (No such file or directory)</p>
-<p>解决方案<br>首先是通过搜索得到的答案：<br>由spark的源码源码的注释可以知道,spark可以读取本地数据文件,但是需要在所有的节点都有这个数据文件(亲测,在有三个节点的集群中,只在master中有这个数据文件时执行textFile方法一直报找不到文件,<br>在另外两个work中复制这个文件之后,就可以读取文件了)<br>sc.textFile(“file:///root/wc/sparkInput”)<br>在idea中读取本地文件是由于本地环境中有hadoop的环境变量.在集群中如果需要加载本地的文件还不如传到hdfs上,然后从hdfs中读取数据.<br>(spark用的是1.6.1)</p>
+        <h4 id="出现错误："><a href="#出现错误：" class="headerlink" title="出现错误："></a>出现错误：</h4><p>Exception in thread “main” java.io.FileNotFoundException:<br>file:/home/yunya/data/dbl_data/param/queries/query.txt (No such file or directory)</p>
+<h4 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h4><p>首先是通过搜索得到的答案：<br>由spark的源码源码的注释可以知道,spark可以读取本地数据文件,但是需要在所有的节点都有这个数据文件(亲测,在有三个节点的集群中,只在master中有这个数据文件时执行textFile方法一直报找不到文件,<br>在另外两个work中复制这个文件之后,就可以读取文件了)<br>sc.textFile(“file:///root/wc/sparkInput”)<br>在idea中读取本地文件是由于本地环境中有hadoop的环境变量.在集群中如果需要加载本地的文件还不如传到hdfs上,然后从hdfs中读取数据.<br>(spark用的是1.6.1)</p>
 <p>我发现这样读取文件还是会出现找不到的错误，于是用scp命令将相应的文件/文件夹传到slaves节点，解决了这个问题。</p>
 
       
@@ -408,8 +408,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -424,7 +433,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">18</span>
+                  <span class="site-state-item-count">19</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -470,6 +479,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#出现错误："><span class="nav-number">1.</span> <span class="nav-text">出现错误：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#解决方案"><span class="nav-number">2.</span> <span class="nav-text">解决方案</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
